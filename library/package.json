@@ -1,0 +1,20 @@
+{
+  "name": "dinesykmeldte-sidemeny",
+  "version": "1.0.0",
+  "type": "module",
+  "source": "src/index.tsx",
+  "exports": {
+    "require": "./dist/dinesykmeldte-sidemeny.cjs",
+    "default": "./dist/dinesykmeldte-sidemeny.modern.js"
+  },
+  "main": "./dist/dinesykmeldte-sidemeny.cjs",
+  "module": "./dist/dinesykmeldte-sidemeny.module.js",
+  "types": "dist/dinesykmeldte-sidemeny.d.ts",
+  "scripts": {
+    "build": "microbundle --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react",
+    "dev": "yarn build watch"
+  },
+  "devDependencies": {
+    "microbundle": "^0.15.0"
+  }
+}
