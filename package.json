@@ -5,5 +5,9 @@
   "workspaces": [
     "library",
     "example"
-  ]
+  ],
+  "scripts": {
+    "dev": "yarn workspaces foreach -pi run dev",
+    "build": "yarn workspace dinesykmeldte-sidemeny run build"
+  }
 }
