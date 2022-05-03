@@ -18,10 +18,9 @@ module.exports = defineConfig({
   },
   plugins: [
     dts({
-      outputDir: "dist",
-      include: "lib",
-      skipDiagnostics: false,
-      logDiagnostics: true,
+      tsConfigFilePath: "./tsconfig.json",
+      include: "./lib",
+      exclude: "./lib/typings.d.ts"
     }),
   ],
 });

@@ -1,5 +1,5 @@
 {
-  "name": "dinesykmeldte-sidemeny",
+  "name": "@navikt/dinesykmeldte-sidemeny",
   "version": "0.1.0",
   "files": [
     "dist"
@@ -7,10 +7,15 @@
   "main": "./dist/dinesykmeldte-sidemeny.umd.js",
   "module": "./dist/dinesykmeldte-sidemeny.es.js",
   "types": "./dist/main.d.ts",
+  "style": "./dist/style.css",
   "exports": {
     ".": {
       "import": "./dist/dinesykmeldte-sidemeny.es.js",
       "require": "./dist/dinesykmeldte-sidemeny.umd.js"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
     }
   },
   "scripts": {
@@ -22,9 +27,9 @@
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "typescript": "^4.6.3",
+    "@types/react": "^18.0.8",
+    "@types/react-dom": "^18.0.3",
+    "typescript": "^4.6.4",
     "vite": "^2.9.7",
     "vite-plugin-dts": "^1.1.1"
   }

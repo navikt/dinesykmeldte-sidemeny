@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "dev": "yarn workspaces foreach -pi run dev",
-    "build": "yarn workspace dinesykmeldte-sidemeny run build"
+    "build": "yarn workspace @navikt/dinesykmeldte-sidemeny run build"
   },
   "devDependencies": {
     "prettier": "^2.6.2"

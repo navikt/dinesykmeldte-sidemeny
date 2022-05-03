@@ -1,15 +1,13 @@
-import React from 'react';
+import * as React from "react";
+
+import styles from "./SideMeny.module.css";
 
 interface Props {
-
+  test: boolean;
 }
 
-const SideMeny = (): JSX.Element => {
-    return (
-        <div>
-            yeet
-        </div>
-    );
+const SideMeny = ({ test }: Props): JSX.Element => {
+  return <div className={styles.test}>yeet</div>;
 };
 
 export default SideMeny;
