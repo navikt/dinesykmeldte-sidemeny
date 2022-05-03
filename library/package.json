@@ -1,20 +1,31 @@
 {
   "name": "dinesykmeldte-sidemeny",
-  "version": "1.0.0",
-  "type": "module",
-  "source": "src/index.tsx",
+  "version": "0.1.0",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/dinesykmeldte-sidemeny.umd.js",
+  "module": "./dist/dinesykmeldte-sidemeny.es.js",
+  "types": "./dist/main.d.ts",
   "exports": {
-    "require": "./dist/dinesykmeldte-sidemeny.cjs",
-    "default": "./dist/dinesykmeldte-sidemeny.modern.js"
+    ".": {
+      "import": "./dist/dinesykmeldte-sidemeny.es.js",
+      "require": "./dist/dinesykmeldte-sidemeny.umd.js"
+    }
   },
-  "main": "./dist/dinesykmeldte-sidemeny.cjs",
-  "module": "./dist/dinesykmeldte-sidemeny.module.js",
-  "types": "dist/dinesykmeldte-sidemeny.d.ts",
   "scripts": {
-    "build": "microbundle --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react",
-    "dev": "yarn build watch"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "peerDependencies": {
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "microbundle": "^0.15.0"
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "typescript": "^4.6.3",
+    "vite": "^2.9.7",
+    "vite-plugin-dts": "^1.1.1"
   }
 }
