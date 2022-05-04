@@ -2,12 +2,10 @@ import * as React from "react";
 
 import styles from "./SideMeny.module.css";
 
-interface Props {
+export interface SideMenyProps {
   test: boolean;
 }
 
-const SideMeny = ({ test }: Props): JSX.Element => {
-  return <div className={styles.test}>yeet</div>;
+export const SideMeny = ({ test }: SideMenyProps): JSX.Element => {
+  return <div className={styles.test}>test</div>;
 };
-
-export default SideMeny;

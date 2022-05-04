@@ -1,6 +1,8 @@
 name: Build and publish
 
 on: [push]
+env:
+  NPM_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
 
 jobs:
   build:
@@ -10,8 +12,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@navikt'
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@navikt"
       - uses: actions/cache@v3
         id: yarn-cache
         with:

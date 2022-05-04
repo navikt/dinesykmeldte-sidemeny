@@ -1,0 +1,4 @@
+:root {
+    /* Will be set programatically by dekoratøren */
+    --decorator-sticky-offset: 0px;
+}

@@ -1,3 +1,4 @@
-import SideMeny from "./SideMeny";
+import "./global.css";
 
-export { SideMeny }
+export * from "./SideMeny";
+export * from "./PageContainer";
