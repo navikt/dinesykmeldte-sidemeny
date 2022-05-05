@@ -7,8 +7,11 @@
 }
 
 .content {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr minmax(
+      auto,
+      var(--navds-content-container-max-width)
+    ) 1fr;
   width: 100%;
   flex: 1 1 auto;
   max-width: 1344px;
@@ -27,10 +30,7 @@
 }
 
 .pageContainer {
-  flex: 1 1 var(--navds-content-container-max-width);
   margin-bottom: var(--navds-spacing-32);
-  max-width: var(--navds-content-container-max-width);
-  width: 100%;
 }
 
 .desktopMenuContainer,
@@ -59,6 +59,10 @@
 
   .mobileMenuAccordion {
     display: block;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
   }
 
   .desktopMenuContainer,
