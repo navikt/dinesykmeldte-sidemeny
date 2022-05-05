@@ -7,5 +7,5 @@ export interface SideMenyProps {
 }
 
 export const SideMeny = ({ test }: SideMenyProps): JSX.Element => {
-  return <div className={styles.test}>test</div>;
+  return <div className={styles.test}>la lalalala lalala al uaoe uhsaoeuh eoaush toeaua s</div>;
 };
