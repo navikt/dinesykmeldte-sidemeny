@@ -1,5 +1,11 @@
 .hideMenuButton {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+}
+
+.toggleGroup {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
 }

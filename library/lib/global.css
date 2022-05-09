@@ -1,5 +1,7 @@
 :root {
     /* Will be set programatically by dekoratøren */
     --decorator-sticky-offset: 0px;
+    /* Custom non design system color, requested by Bendik :) */
+    --warning-color-background: #fef9ef;
     --navds-content-container-max-width: 50rem;
 }

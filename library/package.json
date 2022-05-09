@@ -1,39 +1,45 @@
 {
-  "name": "@navikt/dinesykmeldte-sidemeny",
-  "version": "0.11.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/navikt/dinesykmeldte-sidemeny.git"
-  },
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/dinesykmeldte-sidemeny.umd.js",
-  "module": "./dist/dinesykmeldte-sidemeny.es.js",
-  "types": "./dist/main.d.ts",
-  "style": "./dist/style.css",
-  "exports": {
-    ".": {
-      "import": "./dist/dinesykmeldte-sidemeny.es.js",
-      "require": "./dist/dinesykmeldte-sidemeny.umd.js"
+    "name": "@navikt/dinesykmeldte-sidemeny",
+    "version": "0.11.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/navikt/dinesykmeldte-sidemeny.git"
     },
-    "./dist/style.css": {
-      "import": "./dist/style.css",
-      "require": "./dist/style.css"
+    "files": [
+        "dist"
+    ],
+    "main": "./dist/dinesykmeldte-sidemeny.umd.js",
+    "module": "./dist/dinesykmeldte-sidemeny.es.js",
+    "types": "./dist/main.d.ts",
+    "style": "./dist/style.css",
+    "exports": {
+        ".": {
+            "import": "./dist/dinesykmeldte-sidemeny.es.js",
+            "require": "./dist/dinesykmeldte-sidemeny.umd.js"
+        },
+        "./dist/style.css": {
+            "import": "./dist/style.css",
+            "require": "./dist/style.css"
+        }
+    },
+    "scripts": {
+        "dev": "vite build --watch",
+        "build": "vite build"
+    },
+    "peerDependencies": {
+        "@navikt/ds-icons": "^0.8.12",
+        "@navikt/ds-react": "^0.18.6",
+        "classnames": ">=2",
+        "react": "^18.0.0"
+    },
+    "devDependencies": {
+        "@types/react": "^18.0.9",
+        "@types/react-dom": "^18.0.4",
+        "typescript": "^4.6.4",
+        "vite": "^2.9.9",
+        "vite-plugin-dts": "^1.1.1"
+    },
+    "eslintConfig": {
+        "extends": "@navikt/eslint-config-teamsykmelding"
     }
-  },
-  "scripts": {
-    "dev": "vite build --watch",
-    "build": "vite build"
-  },
-  "peerDependencies": {
-    "react-dom": "^18.0.0"
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.8",
-    "@types/react-dom": "^18.0.3",
-    "typescript": "^4.6.4",
-    "vite": "^2.9.7",
-    "vite-plugin-dts": "^1.1.1"
-  }
 }
