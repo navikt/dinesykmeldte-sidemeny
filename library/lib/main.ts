@@ -1,4 +1,6 @@
-import "./global.css";
+import './global.css';
 
-export * from "./SideMeny";
-export * from "./PageContainer";
+export * from './SideMenu/SideMenu';
+export * from './PageContainer/PageContainer';
+export * from './NotificationDot/NotificationDot';
+export * from './types';
