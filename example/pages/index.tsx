@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Link from 'next/link';
-import { SideMenu, PageContainer, ChildPages, Pages, RootPages } from '@navikt/dinesykmeldte-sidemeny';
+import { PageContainer } from '@navikt/dinesykmeldte-sidemeny';
 import { Accordion, Cell, Grid, Heading, ToggleGroup } from '@navikt/ds-react';
 
 import styles from '../styles/Home.module.css';
+import MyAppsSideMenu from '../components/MyAppsSideMenu';
 
 const Home: NextPage = () => {
     const [sideMenu, setSideMenu] = useState(true);
-    const [value, setValue] = React.useState('sykmeldinger');
+    const [value, setValue] = useState('sykmeldinger');
 
     return (
         <div>
@@ -20,38 +20,7 @@ const Home: NextPage = () => {
             <button className={styles.hideMenuButton} onClick={() => setSideMenu((b) => !b)}>
                 Hide menu
             </button>
-            <PageContainer
-                navigation={
-                    sideMenu && (
-                        <SideMenu
-                            sykmeldtName="Jon Kåre"
-                            activePage={routeToEnum(value)}
-                            routes={{
-                                Soknader: 0,
-                                Sykmeldinger: 1,
-                                Meldinger: 2,
-                                Dialogmoter: {
-                                    notifications: 0,
-                                    internalRoute: ({ children, ...rest }) => (
-                                        <Link href="/some/route" passHref>
-                                            <a {...rest}>{children}</a>
-                                        </Link>
-                                    ),
-                                },
-                                Oppfolgingsplaner: {
-                                    notifications: 0,
-                                    internalRoute: ({ children, ...rest }) => (
-                                        <Link href="/some-other/route" passHref>
-                                            <a {...rest}>{children}</a>
-                                        </Link>
-                                    ),
-                                },
-                                DineSykmeldte: 0,
-                            }}
-                        />
-                    )
-                }
-            >
+            <PageContainer navigation={sideMenu && <MyAppsSideMenu value={value} />}>
                 <Heading size="medium">Simulate route</Heading>
                 <ToggleGroup onChange={setValue} value={value} size="medium" className={styles.toggleGroup}>
                     <ToggleGroup.Item value="sykmeldinger">Sykmeldinger</ToggleGroup.Item>
@@ -81,32 +50,5 @@ const Home: NextPage = () => {
         </div>
     );
 };
-
-function routeToEnum(value: string): Pages {
-    switch (value) {
-        case 'sykmeldinger':
-            return RootPages.Sykmeldinger;
-        case 'soknader':
-            return RootPages.Soknader;
-        case 'meldinger':
-            return RootPages.Meldinger;
-        case 'dialogmoter':
-            return RootPages.Dialogmoter;
-        case 'oppfolgingsplaner':
-            return RootPages.Oppfolgingsplaner;
-        case 'sykmelding':
-            return ChildPages.Sykmelding;
-        case 'soknad':
-            return ChildPages.Soknad;
-        case 'melding':
-            return ChildPages.Melding;
-        case 'dialogmote':
-            return ChildPages.Dialogmote;
-        case 'oppfolgingsplan':
-            return ChildPages.Oppfolgingsplan;
-        default:
-            throw new Error(`Unknown route: ${value}`);
-    }
-}
 
 export default Home;

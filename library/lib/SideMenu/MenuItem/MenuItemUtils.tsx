@@ -36,30 +36,20 @@ export function parentToChild(page: RootPages): ChildPages {
     }
 }
 
-export function pageToUrl(page: Pages): string {
+export function pageToUrl(page: RootPages, sykmeldtId: string): string {
     switch (page) {
         case RootPages.DineSykmeldte:
-            return '/TODO';
+            return '/arbeidsgiver/sykmeldte';
         case RootPages.Sykmeldinger:
-            return '/TODO';
+            return `/arbeidsgiver/sykmeldte/${sykmeldtId}/sykmeldinger`;
         case RootPages.Soknader:
-            return '/TODO';
+            return `/arbeidsgiver/sykmeldte/${sykmeldtId}/soknader`;
         case RootPages.Meldinger:
-            return '/TODO';
+            return `/sykmeldt/${sykmeldtId}/meldinger`;
         case RootPages.Dialogmoter:
-            return '/TODO';
+            return `/dialogmoter/${sykmeldtId}`;
         case RootPages.Oppfolgingsplaner:
-            return '/TODO';
-        case ChildPages.Sykmelding:
-            return '/TODO';
-        case ChildPages.Soknad:
-            return '/TODO';
-        case ChildPages.Melding:
-            return '/TODO';
-        case ChildPages.Dialogmote:
-            return '/TODO';
-        case ChildPages.Oppfolgingsplan:
-            return '/TODO';
+            return `/oppfolgingsplaner/${sykmeldtId}`;
     }
 }
 

@@ -1,16 +1,17 @@
 {
-  "name": "dinesykmeldte-sidemeny-root",
-  "version": "1.0.0",
-  "packageManager": "yarn@3.2.0",
-  "workspaces": [
-    "library",
-    "example"
-  ],
-  "scripts": {
-    "dev": "yarn workspaces foreach -pi run dev",
-    "build": "yarn workspace @navikt/dinesykmeldte-sidemeny run build"
-  },
-  "devDependencies": {
-    "prettier": "^2.6.2"
-  }
+    "name": "dinesykmeldte-sidemeny-root",
+    "version": "1.0.0",
+    "packageManager": "yarn@3.2.0",
+    "workspaces": [
+        "library",
+        "example"
+    ],
+    "scripts": {
+        "dev": "yarn workspaces foreach -pi run dev",
+        "build": "yarn workspace @navikt/dinesykmeldte-sidemeny run build"
+    },
+    "devDependencies": {
+        "prettier": "^2.7.1"
+    },
+    "prettier": "@navikt/eslint-config-teamsykmelding/prettier"
 }

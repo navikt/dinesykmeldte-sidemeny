@@ -10,12 +10,13 @@ import DynamicIcon from './DynamicIcon';
 import styles from './MenuItem.module.css';
 
 interface Props {
+    sykmeldtId: string;
     page: RootPages;
     activePage: Pages;
     route: RouteVariant;
 }
 
-function MenuItem({ page, activePage, route }: Props): JSX.Element {
+function MenuItem({ sykmeldtId, page, activePage, route }: Props): JSX.Element {
     const Icon = pageToIcon(page);
     const childPageActive = isChildPageActive(page, activePage);
 
@@ -26,7 +27,7 @@ function MenuItem({ page, activePage, route }: Props): JSX.Element {
                 <li>
                     <Button
                         className={cn({ [styles.notifyingItem]: notifications > 0 })}
-                        href={pageToUrl(page)}
+                        href={pageToUrl(page, sykmeldtId)}
                         as="a"
                         variant="tertiary"
                         size="small"
