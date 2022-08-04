@@ -97,3 +97,7 @@ Start begge i dev modus ved å (fra root) kjør:
 
 1.  `yarn`
 2.  `yarn start`
+
+## Publishing
+
+Nye versjoner releases automatisk til GCR ved hvert bygg på `main`-branchen. Dersom man ønsker et større versjons-hopp enn bare en minor, så kan man manuelt committe en versjonsendring til main.
