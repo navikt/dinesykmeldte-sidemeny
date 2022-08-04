@@ -86,3 +86,14 @@ Denne komponenten kan brukes sammen med `<PageContainer />` på alle sidene dine
 ```
 
 For et mer fullstendig eksempel kan man ta en titt på [pages/index.tsx](./example/pages/index.tsx) og [components/MyAppsSideMenu.tsx](./example/components/MyAppsSideMenu.tsx).
+
+## Utvikling
+
+Dette repoet består av to workspaces, ett for selve biblioteket og ett for et nextjs eksempelprosjekt.
+
+Dette repoet avhenger av moduler på Github Package Repository. Sett en miljøvariabel som heter `NPM_AUTH_TOKEN` med en PAT token som har `package:read` for å kunne installere avhengighetene.
+
+Start begge i dev modus ved å (fra root) kjør:
+
+1.  `yarn`
+2.  `yarn start`
