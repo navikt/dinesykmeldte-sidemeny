@@ -1,16 +1,20 @@
-.activeSubItem {
+.menuItem .activeSubItem {
     display: flex;
     align-items: center;
     padding-left: var(--navds-spacing-9);
     background-color: var(--navds-semantic-color-interaction-primary-hover-subtle);
 }
 
-.activeSubItem > svg {
+.menuItem .activeSubItem > svg {
     margin-right: var(--navds-spacing-2);
     width: 16px;
     height: 16px;
 }
 
-.notifyingItem {
+.menuItem .notifyingItem {
     background-color: var(--warning-color-background);
+}
+
+.menuItem .activeItem {
+    background-color: var(--navds-semantic-color-interaction-primary-hover-subtle);
 }

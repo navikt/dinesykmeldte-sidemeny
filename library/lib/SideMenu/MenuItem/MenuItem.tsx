@@ -24,9 +24,12 @@ function MenuItem({ sykmeldtId, page, activePage, route }: Props): JSX.Element {
         const notifications = route;
         return (
             <>
-                <li>
+                <li className={styles.menuItem}>
                     <Button
-                        className={cn({ [styles.notifyingItem]: notifications > 0 })}
+                        className={cn({
+                            [styles.activeItem]: activePage === page,
+                            [styles.notifyingItem]: notifications > 0,
+                        })}
                         href={pageToUrl(page, sykmeldtId)}
                         as="a"
                         variant="tertiary"
