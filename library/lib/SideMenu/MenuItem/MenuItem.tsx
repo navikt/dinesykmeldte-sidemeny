@@ -16,7 +16,12 @@ interface Props {
     route: RouteVariant;
 }
 
-function MenuItem({ sykmeldtId, page, activePage, route }: Props): JSX.Element {
+function MenuItem({ sykmeldtId, page, activePage, route }: Props): JSX.Element | null {
+    // Hide if route is sett to false
+    if (typeof route === 'boolean') return null;
+    // Also hide if custom route with hidden true
+    if (typeof route !== 'number' && route.hide) return null;
+
     const Icon = pageToIcon(page);
     const childPageActive = isChildPageActive(page, activePage);
 
@@ -60,7 +65,7 @@ function MenuItem({ sykmeldtId, page, activePage, route }: Props): JSX.Element {
                                 childActive={childPageActive}
                                 notifications={route.notifications}
                             />
-                            {page}
+                            <Label size="small">{page}</Label>
                         </span>
                     </route.internalRoute>
                 }

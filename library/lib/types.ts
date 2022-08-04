@@ -23,9 +23,11 @@ export type Route = (props: PropsWithChildren<{ className?: string }>) => JSX.El
 
 export type RouteVariant =
     | number
+    | false
     | {
           internalRoute: Route;
           notifications: number;
+          hide?: boolean;
       };
 
 export type Routes = {
