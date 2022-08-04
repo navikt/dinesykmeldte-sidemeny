@@ -2,12 +2,12 @@ import { Button, Label } from '@navikt/ds-react';
 import React from 'react';
 import cn from 'classnames';
 
-import { ChildPages, Pages, RootPages, RouteVariant } from '../../types';
-import { cleanId } from '../../utils';
+import { Pages, RootPages, RouteVariant } from '../../types';
 
 import { isChildPageActive, pageToIcon, pageToUrl, parentToChild } from './MenuItemUtils';
 import DynamicIcon from './DynamicIcon';
 import styles from './MenuItem.module.css';
+import { SubMenuItem } from './SubMenuItem';
 
 interface Props {
     sykmeldtId: string;
@@ -46,11 +46,20 @@ function MenuItem({ sykmeldtId, page, activePage, route }: Props): JSX.Element {
 
     return (
         <>
-            <li aria-labelledby={page}>
+            <li aria-labelledby={page} className={styles.menuItem}>
                 {
-                    <route.internalRoute className="navds-button navds-button--tertiary navds-button--small">
+                    <route.internalRoute
+                        className={cn('navds-button navds-button--tertiary navds-button--small', {
+                            [styles.activeItem]: activePage === page,
+                            [styles.notifyingItem]: route.notifications > 0,
+                        })}
+                    >
                         <span className="navds-button__inner navds-body-short">
-                            <Icon />
+                            <DynamicIcon
+                                Icon={Icon}
+                                childActive={childPageActive}
+                                notifications={route.notifications}
+                            />
                             {page}
                         </span>
                     </route.internalRoute>
@@ -58,22 +67,6 @@ function MenuItem({ sykmeldtId, page, activePage, route }: Props): JSX.Element {
             </li>
             {childPageActive && <SubMenuItem page={parentToChild(page)} />}
         </>
-    );
-}
-
-function SubMenuItem({ page }: { page: ChildPages }): JSX.Element {
-    const id = cleanId(page);
-    const Icon = pageToIcon(page);
-
-    return (
-        <li aria-labelledby={id}>
-            <div className={cn('navds-button--small', styles.activeSubItem)}>
-                <Icon />
-                <Label id={id} size="small">
-                    {page}
-                </Label>
-            </div>
-        </li>
     );
 }
 

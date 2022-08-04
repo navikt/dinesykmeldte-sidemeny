@@ -9,7 +9,7 @@ interface Props {
     notifications: number;
 }
 
-function DynamicIcon({ Icon, childActive, notifications }: Props) {
+function DynamicIcon({ Icon, childActive, notifications }: Props): JSX.Element {
     if (childActive) {
         return <Back />;
     } else if (notifications > 0) {

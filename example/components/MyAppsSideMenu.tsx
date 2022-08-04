@@ -17,7 +17,7 @@ function MyAppsSideMenu({ value }: Props): JSX.Element {
                 Sykmeldinger: 1,
                 Meldinger: 2,
                 Dialogmoter: {
-                    notifications: 0,
+                    notifications: 3,
                     internalRoute: ({ children, ...rest }) => (
                         <Link href="/some/route" passHref>
                             <a {...rest}>{children}</a>
