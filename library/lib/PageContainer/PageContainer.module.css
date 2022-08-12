@@ -39,6 +39,11 @@
     max-width: 15rem;
 }
 
+.mobileMenuAccordion {
+    display: none;
+    margin: var(--navds-spacing-2);
+}
+
 .desktopMenuContainer {
     margin-right: var(--navds-spacing-8);
     position: sticky;
@@ -61,6 +66,10 @@
 
     .content {
         grid-template-columns: 1fr;
+    }
+
+    .mobileMenuAccordion {
+        display: block;
     }
 
     .desktopMenuContainer,

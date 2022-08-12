@@ -96,7 +96,7 @@ Dette repoet avhenger av moduler på Github Package Repository. Sett en miljøva
 Start begge i dev modus ved å (fra root) kjør:
 
 1.  `yarn`
-2.  `yarn start`
+2.  `yarn dev`
 
 ## Publishing
 

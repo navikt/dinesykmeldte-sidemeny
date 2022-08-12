@@ -20,7 +20,11 @@ const Home: NextPage = () => {
             <button className={styles.hideMenuButton} onClick={() => setSideMenu((b) => !b)}>
                 Hide menu
             </button>
-            <PageContainer navigation={sideMenu && <MyAppsSideMenu value={value} />}>
+            <PageContainer
+                sykmeldtNavn="Test N. Testson"
+                sykmeldtFnr="123465198723"
+                navigation={sideMenu && <MyAppsSideMenu value={value} />}
+            >
                 <Heading size="medium">Simulate route</Heading>
                 <ToggleGroup onChange={setValue} value={value} size="medium" className={styles.toggleGroup}>
                     <ToggleGroup.Item value="sykmeldinger">Sykmeldinger</ToggleGroup.Item>
