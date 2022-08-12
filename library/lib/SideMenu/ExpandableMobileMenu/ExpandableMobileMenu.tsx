@@ -1,6 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 import { Accordion, BodyShort, Heading } from '@navikt/ds-react';
 import { People } from '@navikt/ds-icons';
+import cn from 'classnames';
 
 import { addSpaceAfterEverySixthCharacter } from '../../utils/stringUtils';
 
@@ -19,7 +20,7 @@ export const ExpandableMobileMenu = ({
     className,
 }: PropsWithChildren<Props>): JSX.Element => {
     return (
-        <Accordion className={className}>
+        <Accordion className={cn(styles.accordionMobileRoot, className)}>
             <Accordion.Item>
                 <Accordion.Header id={`sykmeldt-accordion-header-${sykmeldtFnr}`}>
                     <div className={styles.accordionHeaderContent}>

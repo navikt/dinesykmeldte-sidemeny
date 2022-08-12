@@ -1,3 +1,7 @@
+.accordionMobileRoot {
+    margin-top: var(--navds-spacing-8);
+}
+
 .accordionHeaderContent {
     display: flex;
     gap: 0.5rem;

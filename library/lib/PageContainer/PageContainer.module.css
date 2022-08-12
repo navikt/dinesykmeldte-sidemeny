@@ -41,7 +41,6 @@
 
 .mobileMenuAccordion {
     display: none;
-    margin: var(--navds-spacing-2);
 }
 
 .desktopMenuContainer {
