@@ -6,25 +6,21 @@ import { ExpandableMobileMenu } from '../SideMenu/ExpandableMobileMenu/Expandabl
 import styles from './PageContainer.module.css';
 
 export type PageContainerProps = PropsWithChildren<{
-    sykmeldtNavn: string;
-    sykmeldtFnr: string;
+    sykmeldt?: {
+        navn: string;
+        fnr: string;
+    };
     className?: string;
     navigation?: ReactNode;
 }>;
 
-export const PageContainer = ({
-    sykmeldtNavn,
-    sykmeldtFnr,
-    navigation,
-    children,
-    className,
-}: PageContainerProps): JSX.Element => {
+export const PageContainer = ({ sykmeldt, navigation, children, className }: PageContainerProps): JSX.Element => {
     return (
         <>
-            {navigation ? (
+            {navigation && sykmeldt ? (
                 <ExpandableMobileMenu
-                    sykmeldtNavn={sykmeldtNavn}
-                    sykmeldtFnr={sykmeldtFnr}
+                    sykmeldtNavn={sykmeldt.navn}
+                    sykmeldtFnr={sykmeldt.fnr}
                     className={styles.mobileMenuAccordion}
                 >
                     {navigation}
