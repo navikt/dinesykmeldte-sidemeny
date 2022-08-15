@@ -10,9 +10,9 @@ module.exports = defineConfig({
             fileName: (format) => `dinesykmeldte-sidemeny.${format}.js`,
         },
         rollupOptions: {
-            external: ['react'],
+            external: ['react', '@navikt/ds-react', '@navikt/ds-icons'],
             output: {
-                globals: { react: 'React' },
+                globals: { react: 'React', '@navikt/ds-react': 'ds-react', '@navikt/ds-icons': 'ds-icons' },
             },
         },
     },
