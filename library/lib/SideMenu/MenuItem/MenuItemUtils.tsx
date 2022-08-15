@@ -36,7 +36,7 @@ export function parentToChild(page: RootPages): ChildPages {
     }
 }
 
-export function pageToUrl(page: RootPages, sykmeldtId: string): string {
+export function pageToUrl(activePage: Pages, page: RootPages, sykmeldtId: string): string {
     switch (page) {
         case RootPages.DineSykmeldte:
             return '/arbeidsgiver/sykmeldte';
@@ -45,11 +45,19 @@ export function pageToUrl(page: RootPages, sykmeldtId: string): string {
         case RootPages.Soknader:
             return `/arbeidsgiver/sykmeldte/${sykmeldtId}/soknader`;
         case RootPages.Meldinger:
-            return `/sykmeldt/${sykmeldtId}/meldinger`;
+            return `/arbeidsgiver/sykmeldte/sykmeldt/${sykmeldtId}/meldinger`;
         case RootPages.Dialogmoter:
-            return `/dialogmoter/${sykmeldtId}`;
+            if (isDineSykmeldte(activePage)) {
+                return `/arbeidsgiver/sykmeldte/dialogmoter/${sykmeldtId}`;
+            } else {
+                return `/syk/dialogmoter/arbeidsgiver/${sykmeldtId}`;
+            }
         case RootPages.Oppfolgingsplaner:
-            return `/oppfolgingsplaner/${sykmeldtId}`;
+            if (isDineSykmeldte(activePage)) {
+                return `/arbeidsgiver/sykmeldte/oppfolgingsplaner/${sykmeldtId}`;
+            } else {
+                return `/syk/oppfolgingsplanarbeidsgiver/${sykmeldtId}/oppfolgingsplaner`;
+            }
     }
 }
 
@@ -72,5 +80,23 @@ export function pageToIcon(page: Pages): typeof Bandage {
         case RootPages.Sykmeldinger:
         case ChildPages.Sykmelding:
             return Bandage;
+    }
+}
+
+function isDineSykmeldte(activePage: Pages): boolean {
+    switch (activePage) {
+        case RootPages.Sykmeldinger:
+        case ChildPages.Sykmelding:
+        case RootPages.Soknader:
+        case ChildPages.Soknad:
+        case RootPages.Meldinger:
+        case ChildPages.Melding:
+        case RootPages.DineSykmeldte:
+            return true;
+        case RootPages.Dialogmoter:
+        case RootPages.Oppfolgingsplaner:
+        case ChildPages.Dialogmote:
+        case ChildPages.Oppfolgingsplan:
+            return false;
     }
 }
