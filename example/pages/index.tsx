@@ -21,8 +21,10 @@ const Home: NextPage = () => {
                 Hide menu
             </button>
             <PageContainer
-                sykmeldtNavn="Test N. Testson"
-                sykmeldtFnr="123465198723"
+                sykmeldt={{
+                    navn: 'Test N. Testson',
+                    fnr: '123456789',
+                }}
                 navigation={sideMenu && <MyAppsSideMenu value={value} />}
             >
                 <Heading size="medium">Simulate route</Heading>
