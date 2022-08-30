@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { PageContainer } from '@navikt/dinesykmeldte-sidemeny';
-import { Accordion, Cell, Grid, Heading, ToggleGroup } from '@navikt/ds-react';
+import { Accordion, Cell, Grid, Heading, Select, ToggleGroup } from '@navikt/ds-react';
+import { Bandage } from '@navikt/ds-icons';
 
 import styles from '../styles/Home.module.css';
 import MyAppsSideMenu from '../components/MyAppsSideMenu';
 
 const Home: NextPage = () => {
     const [sideMenu, setSideMenu] = useState(true);
+    const [headerExtra, setHeaderExtra] = useState(true);
     const [value, setValue] = useState('sykmeldinger');
 
     return (
@@ -17,10 +19,28 @@ const Home: NextPage = () => {
                 <title>Dine Sykmeldte Sidemeny Demoside</title>
             </Head>
 
-            <button className={styles.hideMenuButton} onClick={() => setSideMenu((b) => !b)}>
-                Hide menu
-            </button>
+            <div className={styles.extraFloatingButtons}>
+                <button onClick={() => setSideMenu((b) => !b)}>Hide menu</button>
+                <button onClick={() => setHeaderExtra((b) => !b)}>Hide header extra</button>
+            </div>
             <PageContainer
+                header={{
+                    title: {
+                        title: 'Test app with long title',
+                        Icon: Bandage,
+                        subtitle: 'Subby subby sub sub',
+                    },
+                    headerExtra: headerExtra && (
+                        <div>
+                            <Select label="Velg noe da">
+                                <option>A</option>
+                                <option>A</option>
+                                <option>A</option>
+                                <option>A</option>
+                            </Select>
+                        </div>
+                    ),
+                }}
                 sykmeldt={{
                     navn: 'Test N. Testson',
                     fnr: '123456789',

@@ -4,8 +4,13 @@ import cn from 'clsx';
 import { ExpandableMobileMenu } from '../SideMenu/ExpandableMobileMenu/ExpandableMobileMenu';
 
 import styles from './PageContainer.module.css';
+import PageHeader, { HeaderTitle } from './PageHeader/PageHeader';
 
 export type PageContainerProps = PropsWithChildren<{
+    header: {
+        title: HeaderTitle;
+        headerExtra?: ReactNode;
+    };
     sykmeldt?: {
         navn: string;
         fnr: string;
@@ -14,9 +19,15 @@ export type PageContainerProps = PropsWithChildren<{
     navigation?: ReactNode;
 }>;
 
-export const PageContainer = ({ sykmeldt, navigation, children, className }: PageContainerProps): JSX.Element => {
+export const PageContainer = ({
+    header,
+    sykmeldt,
+    navigation,
+    children,
+    className,
+}: PageContainerProps): JSX.Element => {
     return (
-        <>
+        <PageHeader title={header.title} headerExtra={header.headerExtra}>
             {navigation && sykmeldt ? (
                 <ExpandableMobileMenu
                     sykmeldtNavn={sykmeldt.navn}
@@ -38,6 +49,6 @@ export const PageContainer = ({ sykmeldt, navigation, children, className }: Pag
                     <div className={styles.sideMenuFiller} />
                 </div>
             </div>
-        </>
+        </PageHeader>
     );
 };
