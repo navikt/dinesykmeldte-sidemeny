@@ -5,3 +5,7 @@
 .menuItem .activeItem {
     background-color: var(--navds-semantic-color-interaction-primary-hover-subtle);
 }
+
+.menuItem .menuItemButton {
+    justify-content: flex-start;
+}

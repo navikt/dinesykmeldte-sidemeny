@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 import { Accordion, BodyShort, Heading } from '@navikt/ds-react';
 import { People } from '@navikt/ds-icons';
-import cn from 'classnames';
+import cn from 'clsx';
 
 import { addSpaceAfterEverySixthCharacter } from '../../utils/stringUtils';
 

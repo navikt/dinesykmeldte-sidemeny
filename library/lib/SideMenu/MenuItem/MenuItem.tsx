@@ -1,6 +1,6 @@
 import { Button, Label } from '@navikt/ds-react';
 import React from 'react';
-import cn from 'classnames';
+import cn from 'clsx';
 
 import { Pages, RootPages, RouteVariant } from '../../types';
 
@@ -31,7 +31,7 @@ function MenuItem({ sykmeldtId, page, activePage, route }: Props): JSX.Element |
             <>
                 <li className={styles.menuItem}>
                     <Button
-                        className={cn({
+                        className={cn(styles.menuItemButton, {
                             [styles.activeItem]: activePage === page,
                             [styles.notifyingItem]: notifications > 0,
                         })}
@@ -39,9 +39,9 @@ function MenuItem({ sykmeldtId, page, activePage, route }: Props): JSX.Element |
                         as="a"
                         variant="tertiary"
                         size="small"
+                        icon={<DynamicIcon Icon={Icon} childActive={childPageActive} notifications={notifications} />}
                     >
-                        <DynamicIcon Icon={Icon} childActive={childPageActive} notifications={notifications} />
-                        <Label size="small">{page}</Label>
+                        {page}
                     </Button>
                 </li>
                 {childPageActive && <SubMenuItem page={parentToChild(page)} />}
@@ -54,19 +54,24 @@ function MenuItem({ sykmeldtId, page, activePage, route }: Props): JSX.Element |
             <li aria-labelledby={page} className={styles.menuItem}>
                 {
                     <route.internalRoute
-                        className={cn('navds-button navds-button--tertiary navds-button--small', {
-                            [styles.activeItem]: activePage === page,
-                            [styles.notifyingItem]: route.notifications > 0,
-                        })}
+                        className={cn(
+                            'navds-button navds-button--tertiary navds-button--small',
+                            styles.menuItemButton,
+                            {
+                                [styles.activeItem]: activePage === page,
+                                [styles.notifyingItem]: route.notifications > 0,
+                            },
+                        )}
                     >
-                        <span className="navds-button__inner navds-body-short">
+                        <span className="navds-button__icon">
                             <DynamicIcon
                                 Icon={Icon}
                                 childActive={childPageActive}
                                 notifications={route.notifications}
                             />
-                            <Label size="small">{page}</Label>
                         </span>
+
+                        <span className="navds-label navds-label--small">{page}</span>
                     </route.internalRoute>
                 }
             </li>

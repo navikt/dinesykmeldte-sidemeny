@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import cn from 'clsx';
 import { Label } from '@navikt/ds-react';
 import React from 'react';
 
