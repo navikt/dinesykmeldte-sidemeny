@@ -12,7 +12,7 @@ export type HeaderTitle = {
 };
 
 interface Props {
-    header: HeaderTitle;
+    header: HeaderTitle | false;
     headerRight?: ReactNode;
     hideHeaderOnMobile?: boolean;
 }
@@ -20,20 +20,22 @@ interface Props {
 function PageHeader({ header, headerRight, hideHeaderOnMobile, children }: PropsWithChildren<Props>): JSX.Element {
     return (
         <>
-            <div className={cn(styles.headerRoot, { [styles.hideHeaderOnMobile]: hideHeaderOnMobile })}>
-                <section className={cn(styles.wrapper)} aria-labelledby="page-header">
-                    <div className={styles.heading}>
-                        {header.Icon && <header.Icon />}
-                        <div>
-                            <Heading id="page-header" level="1" size="xlarge">
-                                {header.title}
-                            </Heading>
-                            <BodyShort className={styles.subtitle}>{header.subtitle}</BodyShort>
+            {typeof header === 'object' && (
+                <div className={cn(styles.headerRoot, { [styles.hideHeaderOnMobile]: hideHeaderOnMobile })}>
+                    <section className={cn(styles.wrapper)} aria-labelledby="page-header">
+                        <div className={styles.heading}>
+                            {header.Icon && <header.Icon />}
+                            <div>
+                                <Heading id="page-header" level="1" size="xlarge">
+                                    {header.title}
+                                </Heading>
+                                <BodyShort className={styles.subtitle}>{header.subtitle}</BodyShort>
+                            </div>
                         </div>
-                    </div>
-                    {headerRight && <div className={styles.headerExtra}>{headerRight}</div>}
-                </section>
-            </div>
+                        {headerRight && <div className={styles.headerExtra}>{headerRight}</div>}
+                    </section>
+                </div>
+            )}
             {children}
         </>
     );

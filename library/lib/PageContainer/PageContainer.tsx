@@ -7,7 +7,8 @@ import styles from './PageContainer.module.css';
 import PageHeader, { HeaderTitle } from './PageHeader/PageHeader';
 
 type PageContainerProps = {
-    header: HeaderTitle;
+    /* You can opt out of the header by explicitly setting it to false. This will be removed in the future. */
+    header: HeaderTitle | false;
     headerRight?: ReactNode;
     className?: string;
 } & SykmeldtNavigation;

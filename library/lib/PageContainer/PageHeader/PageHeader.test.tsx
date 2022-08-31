@@ -19,4 +19,14 @@ describe('PageWrapper', () => {
         expect(header.getByText('This is a subtitle')).toBeInTheDocument();
         expect(header.queryByRole('combobox')).not.toBeInTheDocument();
     });
+
+    it('should be able to opt out of header by setting it to false', () => {
+        render(
+            <PageHeader header={false}>
+                <div>These are children</div>
+            </PageHeader>,
+        );
+
+        expect(screen.queryByRole('heading')).not.toBeInTheDocument();
+    });
 });
