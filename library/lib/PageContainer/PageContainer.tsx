@@ -18,7 +18,7 @@ type SykmeldtNavigation =
           sykmeldt: {
               navn: string;
               fnr: string;
-          };
+          } | null;
           navigation: ReactNode;
       }
     | {
