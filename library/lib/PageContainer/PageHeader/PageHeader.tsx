@@ -12,25 +12,25 @@ export type HeaderTitle = {
 };
 
 interface Props {
-    title: HeaderTitle;
-    headerExtra?: ReactNode;
+    header: HeaderTitle;
+    headerRight?: ReactNode;
 }
 
-function PageHeader({ title, headerExtra, children }: PropsWithChildren<Props>): JSX.Element {
+function PageHeader({ header, headerRight, children }: PropsWithChildren<Props>): JSX.Element {
     return (
         <>
             <div className={cn(styles.headerRoot)}>
                 <section className={cn(styles.wrapper)} aria-labelledby="page-header">
                     <div className={styles.heading}>
-                        {title.Icon && <title.Icon />}
+                        {header.Icon && <header.Icon />}
                         <div>
                             <Heading id="page-header" level="1" size="xlarge">
-                                {title.title}
+                                {header.title}
                             </Heading>
-                            <BodyShort className={styles.subtitle}>{title.subtitle}</BodyShort>
+                            <BodyShort className={styles.subtitle}>{header.subtitle}</BodyShort>
                         </div>
                     </div>
-                    <div className={styles.headerExtra}>{headerExtra}</div>
+                    {headerRight && <div className={styles.headerExtra}>{headerRight}</div>}
                 </section>
             </div>
             {children}

@@ -1,6 +1,10 @@
-const path = require('path');
-const { defineConfig } = require('vite');
+/// <reference types="vitest" />
+/// <reference types="vite/client" />
+
+import * as path from 'path';
+
 import dts from 'vite-plugin-dts';
+import { defineConfig } from 'vite';
 
 module.exports = defineConfig({
     build: {
@@ -23,4 +27,10 @@ module.exports = defineConfig({
             exclude: './lib/typings.d.ts',
         }),
     ],
+    test: {
+        globals: true,
+        environment: 'jsdom',
+        setupFiles: './test/setupTests.ts',
+        css: true,
+    },
 });

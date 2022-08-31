@@ -6,28 +6,36 @@ import { ExpandableMobileMenu } from '../SideMenu/ExpandableMobileMenu/Expandabl
 import styles from './PageContainer.module.css';
 import PageHeader, { HeaderTitle } from './PageHeader/PageHeader';
 
-export type PageContainerProps = PropsWithChildren<{
-    header: {
-        title: HeaderTitle;
-        headerExtra?: ReactNode;
-    };
-    sykmeldt?: {
-        navn: string;
-        fnr: string;
-    };
+type PageContainerProps = {
+    header: HeaderTitle;
+    headerRight?: ReactNode;
     className?: string;
-    navigation?: ReactNode;
-}>;
+} & SykmeldtNavigation;
+
+// Either both sykmeldt and navigation needs to be provided, or none of them
+type SykmeldtNavigation =
+    | {
+          sykmeldt: {
+              navn: string;
+              fnr: string;
+          };
+          navigation: ReactNode;
+      }
+    | {
+          sykmeldt?: never;
+          navigation?: never;
+      };
 
 export const PageContainer = ({
     header,
+    headerRight,
     sykmeldt,
     navigation,
     children,
     className,
-}: PageContainerProps): JSX.Element => {
+}: PropsWithChildren<PageContainerProps>): JSX.Element => {
     return (
-        <PageHeader title={header.title} headerExtra={header.headerExtra}>
+        <PageHeader header={header} headerRight={headerRight}>
             {navigation && sykmeldt ? (
                 <ExpandableMobileMenu
                     sykmeldtNavn={sykmeldt.navn}

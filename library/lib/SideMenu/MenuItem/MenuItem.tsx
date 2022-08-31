@@ -1,4 +1,4 @@
-import { Button, Label } from '@navikt/ds-react';
+import { Button } from '@navikt/ds-react';
 import React from 'react';
 import cn from 'clsx';
 
