@@ -35,7 +35,7 @@ export const PageContainer = ({
     className,
 }: PropsWithChildren<PageContainerProps>): JSX.Element => {
     return (
-        <PageHeader header={header} headerRight={headerRight}>
+        <PageHeader header={header} headerRight={headerRight} hideHeaderOnMobile={!!navigation}>
             {navigation && sykmeldt ? (
                 <ExpandableMobileMenu
                     sykmeldtNavn={sykmeldt.navn}

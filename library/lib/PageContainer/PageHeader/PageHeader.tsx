@@ -14,12 +14,13 @@ export type HeaderTitle = {
 interface Props {
     header: HeaderTitle;
     headerRight?: ReactNode;
+    hideHeaderOnMobile?: boolean;
 }
 
-function PageHeader({ header, headerRight, children }: PropsWithChildren<Props>): JSX.Element {
+function PageHeader({ header, headerRight, hideHeaderOnMobile, children }: PropsWithChildren<Props>): JSX.Element {
     return (
         <>
-            <div className={cn(styles.headerRoot)}>
+            <div className={cn(styles.headerRoot, { [styles.hideHeaderOnMobile]: hideHeaderOnMobile })}>
                 <section className={cn(styles.wrapper)} aria-labelledby="page-header">
                     <div className={styles.heading}>
                         {header.Icon && <header.Icon />}
