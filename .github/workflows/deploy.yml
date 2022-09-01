@@ -54,4 +54,4 @@ jobs:
           git remote set-url origin https://github-actions[bot]:$NAV_DS_TOKEN@github.com/$GITHUB_REPOSITORY.git
       - run: yarn version -i minor
         working-directory: ./library
-      - run: git add . && git commit -m "[skip ci] bump version to $(jq -r .version package.json)" && git push
+      - run: git add . && git commit -m "[skip ci] bump version to $(jq -r .version library/package.json)" && git push
