@@ -41,9 +41,9 @@ export function pageToUrl(activePage: Pages, page: RootPages, sykmeldtId: string
         case RootPages.DineSykmeldte:
             return '/arbeidsgiver/sykmeldte';
         case RootPages.Sykmeldinger:
-            return `/arbeidsgiver/sykmeldte/${sykmeldtId}/sykmeldinger`;
+            return `/arbeidsgiver/sykmeldte/sykmeldt/${sykmeldtId}/sykmeldinger`;
         case RootPages.Soknader:
-            return `/arbeidsgiver/sykmeldte/${sykmeldtId}/soknader`;
+            return `/arbeidsgiver/sykmeldte/sykmeldt/${sykmeldtId}/soknader`;
         case RootPages.Meldinger:
             return `/arbeidsgiver/sykmeldte/sykmeldt/${sykmeldtId}/meldinger`;
         case RootPages.Dialogmoter:
