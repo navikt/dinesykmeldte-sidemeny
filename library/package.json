@@ -33,7 +33,7 @@
         "@navikt/ds-react": "^1.x",
         "clsx": "^1.x",
         "react": "17 - 18",
-        "react-dom": "17 - 18"
+        "react-dom": "16.8 - 18"
     },
     "devDependencies": {
         "@testing-library/jest-dom": "^5.16.5",
