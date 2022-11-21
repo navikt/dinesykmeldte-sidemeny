@@ -51,7 +51,7 @@ function MenuItem({ sykmeldtId, page, activePage, route }: Props): JSX.Element |
 
     return (
         <>
-            <li aria-labelledby={page} className={styles.menuItem}>
+            <li className={styles.menuItem}>
                 {
                     <route.internalRoute
                         className={cn(

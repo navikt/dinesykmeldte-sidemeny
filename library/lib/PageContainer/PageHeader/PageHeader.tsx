@@ -24,7 +24,7 @@ function PageHeader({ header, headerRight, hideHeaderOnMobile, children }: Props
                 <div className={cn(styles.headerRoot, { [styles.hideHeaderOnMobile]: hideHeaderOnMobile })}>
                     <section className={cn(styles.wrapper)} aria-labelledby="page-header">
                         <div className={styles.heading}>
-                            {header.Icon && <header.Icon />}
+                            {header.Icon && <header.Icon role="img" aria-hidden />}
                             <div>
                                 <Heading id="page-header" level="1" size="xlarge">
                                     {header.title}

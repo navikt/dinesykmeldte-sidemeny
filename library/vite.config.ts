@@ -24,7 +24,6 @@ module.exports = defineConfig({
         dts({
             tsConfigFilePath: './tsconfig.json',
             include: './lib',
-            exclude: './lib/typings.d.ts',
         }),
     ],
     test: {
