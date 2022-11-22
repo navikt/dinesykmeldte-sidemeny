@@ -11,12 +11,12 @@ interface Props {
 
 function DynamicIcon({ Icon, childActive, notifications }: Props): JSX.Element {
     if (childActive) {
-        return <Back />;
+        return <Back role="img" aria-hidden />;
     } else if (notifications > 0) {
         return <NotifcationDot notifications={notifications} />;
     }
 
-    return <Icon />;
+    return <Icon role="img" aria-hidden />;
 }
 
 export default DynamicIcon;
