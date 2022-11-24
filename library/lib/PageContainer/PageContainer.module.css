@@ -2,8 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding-top: var(--navds-spacing-12);
-    margin-bottom: var(--navds-spacing-14);
+    padding-top: var(--a-spacing-12);
+    margin-bottom: var(--a-spacing-14);
 }
 
 .content {
@@ -28,7 +28,7 @@
 
 .pageContainer {
     flex: 1 1 50%;
-    margin-bottom: var(--navds-spacing-32);
+    margin-bottom: var(--a-spacing-32);
     max-width: var(--page-container-content-width);
     width: 100%;
 }
@@ -44,10 +44,10 @@
 }
 
 .desktopMenuContainer {
-    margin-right: var(--navds-spacing-8);
+    margin-right: var(--a-spacing-8);
     position: sticky;
-    top: calc(var(--navds-spacing-8) + var(--decorator-sticky-offset));
-    margin-bottom: var(--navds-spacing-8);
+    top: calc(var(--a-spacing-8) + var(--decorator-sticky-offset));
+    margin-bottom: var(--a-spacing-8);
     height: 100%;
 }
 
