@@ -11,12 +11,12 @@
     },
     "dependencies": {
         "@navikt/dinesykmeldte-sidemeny": "workspace:*",
-        "@navikt/ds-css": "^1.5.10",
-        "@navikt/ds-icons": "^1.5.10",
-        "@navikt/ds-react": "^1.5.10",
+        "@navikt/ds-css": "^2.0.2",
+        "@navikt/ds-icons": "^2.0.2",
+        "@navikt/ds-react": "^2.0.2",
         "@navikt/nav-dekoratoren-moduler": "^1.8.1",
         "clsx": "^1.2.1",
-        "next": "12.3.3",
+        "next": "12.3.4",
         "react": "18.2.0",
         "react-dom": "18.2.0"
     },

@@ -1,17 +1,17 @@
 .navRoot {
-    padding-right: var(--navds-spacing-4);
+    padding-right: var(--a-spacing-4);
 }
 
 .navRoot .heading {
-    border-bottom: 1px solid var(--navds-panel-color-border);
-    margin-bottom: var(--navds-spacing-3);
-    padding-bottom: var(--navds-spacing-4);
+    border-bottom: 1px solid var(--a-border-default);
+    margin-bottom: var(--a-spacing-3);
+    padding-bottom: var(--a-spacing-4);
 }
 
 .navRoot .buttonList {
     display: flex;
     flex-direction: column;
-    gap: var(--navds-spacing-1);
+    gap: var(--a-spacing-1);
     list-style: none;
     padding: 0;
     margin: 0;
@@ -19,7 +19,7 @@
 
 .navRoot .buttonList a {
     width: 100%;
-    color: var(--navds-semantic-color-text);
+    color: var(--a-text-default);
 }
 
 .navRoot .buttonList a > span {
@@ -27,13 +27,13 @@
 }
 
 .navRoot .buttonList a:hover {
-    color: var(--navds-link-color-text);
+    color: var(--a-text-action);
 }
 
 .navRoot .buttonList li:last-child {
-    margin-top: var(--navds-spacing-9);
+    margin-top: var(--a-spacing-9);
 }
 
 .navRoot .buttonList li:last-child a {
-    color: var(--navds-link-color-text);
+    color: var(--a-text-action);
 }
