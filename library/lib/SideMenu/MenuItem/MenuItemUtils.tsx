@@ -56,7 +56,7 @@ export function pageToUrl(activePage: Pages, page: RootPages, sykmeldtId: string
             if (isDineSykmeldte(activePage)) {
                 return `/arbeidsgiver/sykmeldte/oppfolgingsplaner/${sykmeldtId}`;
             } else {
-                return `/syk/oppfolgingsplanarbeidsgiver/${sykmeldtId}/oppfolgingsplaner`;
+                return `/syk/oppfolgingsplaner/arbeidsgiver/${sykmeldtId}`;
             }
     }
 }

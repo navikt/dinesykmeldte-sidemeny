@@ -1,6 +1,6 @@
 {
     "name": "@navikt/dinesykmeldte-sidemeny",
-    "version": "2.2.0",
+    "version": "3.0.0",
     "repository": {
         "type": "git",
         "url": "https://github.com/navikt/dinesykmeldte-sidemeny.git"
