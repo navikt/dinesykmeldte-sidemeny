@@ -1,4 +1,4 @@
-import { BodyShort, Heading } from '@navikt/ds-react';
+import { BodyShort, Heading, Skeleton } from '@navikt/ds-react';
 import React, { PropsWithChildren, ReactNode } from 'react';
 import { Bandage } from '@navikt/ds-icons';
 import cn from 'clsx';
@@ -9,6 +9,7 @@ export type HeaderTitle = {
     Icon?: typeof Bandage;
     title: string;
     subtitle?: ReactNode;
+    subtitleSkeleton?: boolean;
 };
 
 interface Props {
@@ -33,7 +34,12 @@ function PageHeader({ header, headerRight, hideHeaderOnMobile, children }: Props
                                 <Heading id="page-header" level="1" size="xlarge">
                                     {header.title}
                                 </Heading>
-                                <BodyShort className={styles.subtitle}>{header.subtitle}</BodyShort>
+                                {header.subtitle && (
+                                    <BodyShort className={styles.subtitle}>{header.subtitle}</BodyShort>
+                                )}
+                                {!header.subtitle && header.subtitleSkeleton && (
+                                    <Skeleton variant="text" width="100%" height="var(--a-font-size-heading-xlarge)" />
+                                )}
                             </div>
                         </div>
                         {headerRight && <div className={styles.headerExtra}>{headerRight}</div>}
