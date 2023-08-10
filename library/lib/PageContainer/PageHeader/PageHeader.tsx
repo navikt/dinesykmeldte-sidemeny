@@ -1,12 +1,12 @@
 import { BodyShort, Heading, Skeleton } from '@navikt/ds-react';
 import React, { PropsWithChildren, ReactNode } from 'react';
-import { Bandage } from '@navikt/ds-icons';
+import { BandageIcon } from '@navikt/aksel-icons';
 import cn from 'clsx';
 
 import styles from './PageHeader.module.css';
 
 export type HeaderTitle = {
-    Icon?: typeof Bandage;
+    Icon?: typeof BandageIcon;
     title: string;
     subtitle?: ReactNode;
     subtitleSkeleton?: boolean;

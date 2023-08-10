@@ -1,17 +1,17 @@
 import React from 'react';
-import { Back, Bandage } from '@navikt/ds-icons';
+import { ArrowLeftIcon, BandageIcon } from '@navikt/aksel-icons';
 
 import { NotifcationDot } from '../../NotificationDot/NotificationDot';
 
 interface Props {
-    Icon: typeof Bandage;
+    Icon: typeof BandageIcon;
     childActive: boolean;
     notifications: number;
 }
 
 function DynamicIcon({ Icon, childActive, notifications }: Props): JSX.Element {
     if (childActive) {
-        return <Back role="img" aria-hidden />;
+        return <ArrowLeftIcon role="img" aria-hidden />;
     } else if (notifications > 0) {
         return <NotifcationDot notifications={notifications} />;
     }

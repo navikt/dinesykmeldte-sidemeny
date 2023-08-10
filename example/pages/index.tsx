@@ -3,7 +3,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { PageContainer } from '@navikt/dinesykmeldte-sidemeny';
 import { Accordion, Cell, Grid, Heading, Select, ToggleGroup } from '@navikt/ds-react';
-import { Bandage } from '@navikt/ds-icons';
+import { BandageIcon } from '@navikt/aksel-icons';
 
 import styles from '../styles/Home.module.css';
 import MyAppsSideMenu from '../components/MyAppsSideMenu';
@@ -17,7 +17,7 @@ const Home: NextPage = () => {
         <PageContainer
             header={{
                 title: 'Test app with long title long long long title very long',
-                Icon: Bandage,
+                Icon: BandageIcon,
                 subtitle: 'Subby subby sub sub',
             }}
             headerRight={

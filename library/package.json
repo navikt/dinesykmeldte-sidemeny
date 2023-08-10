@@ -1,6 +1,6 @@
 {
     "name": "@navikt/dinesykmeldte-sidemeny",
-    "version": "4.1.0",
+    "version": "5.0.0",
     "repository": {
         "type": "git",
         "url": "https://github.com/navikt/dinesykmeldte-sidemeny.git"
@@ -29,22 +29,24 @@
         "lint": "eslint lib"
     },
     "peerDependencies": {
-        "@navikt/ds-icons": "^2.x",
-        "@navikt/ds-react": "^2.x",
+        "@navikt/aksel-icons": "^4.x",
+        "@navikt/ds-react": "^4.x",
         "clsx": "^1.x",
         "react": "17 - 18",
         "react-dom": "16.8 - 18"
     },
     "devDependencies": {
-        "@testing-library/jest-dom": "^5.16.5",
-        "@testing-library/react": "^13.4.0",
-        "@types/react": "^18.0.25",
-        "@types/react-dom": "^18.0.9",
-        "eslint": "^8.21.0",
-        "typescript": "^4.9.3",
-        "vite": "^3.2.4",
-        "vite-plugin-dts": "^1.7.1",
-        "vitest": "^0.25.3"
+        "@testing-library/jest-dom": "^5.17.0",
+        "@testing-library/react": "^14.0.0",
+        "@types/react": "^18.2.20",
+        "@types/react-dom": "^18.2.7",
+        "@vitejs/plugin-react": "^4.0.4",
+        "eslint": "^8.46.0",
+        "jsdom": "^22.1.0",
+        "typescript": "^4.9.5",
+        "vite": "^3.2.7",
+        "vite-plugin-dts": "^1.7.3",
+        "vitest": "^0.34.1"
     },
     "eslintConfig": {
         "extends": "@navikt/eslint-config-teamsykmelding"

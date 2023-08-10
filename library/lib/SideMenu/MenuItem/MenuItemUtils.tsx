@@ -1,4 +1,11 @@
-import { Bandage, CoApplicant, Dialog, Email, Notes, Task } from '@navikt/ds-icons';
+import {
+    BandageIcon,
+    PersonGroupIcon,
+    Chat2Icon,
+    EnvelopeClosedIcon,
+    DocPencilIcon,
+    TasklistIcon,
+} from '@navikt/aksel-icons';
 
 import { ChildPages, Pages, RootPages } from '../../types';
 
@@ -61,25 +68,25 @@ export function pageToUrl(activePage: Pages, page: RootPages, sykmeldtId: string
     }
 }
 
-export function pageToIcon(page: Pages): typeof Bandage {
+export function pageToIcon(page: Pages): typeof BandageIcon {
     switch (page) {
         case RootPages.DineSykmeldte:
-            return CoApplicant;
+            return PersonGroupIcon;
         case RootPages.Soknader:
         case ChildPages.Soknad:
-            return Task;
+            return TasklistIcon;
         case RootPages.Meldinger:
         case ChildPages.Melding:
-            return Email;
+            return EnvelopeClosedIcon;
         case RootPages.Dialogmoter:
         case ChildPages.Dialogmote:
-            return Dialog;
+            return Chat2Icon;
         case RootPages.Oppfolgingsplaner:
         case ChildPages.Oppfolgingsplan:
-            return Notes;
+            return DocPencilIcon;
         case RootPages.Sykmeldinger:
         case ChildPages.Sykmelding:
-            return Bandage;
+            return BandageIcon;
     }
 }
 

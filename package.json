@@ -16,11 +16,11 @@
         "lint": "yarn workspaces foreach -pi run lint"
     },
     "devDependencies": {
-        "eslint": "^8.21.0",
-        "husky": "^8.0.2",
-        "lint-staged": "^13.0.3",
-        "node-gyp": "^9.3.1",
-        "prettier": "^2.8.0"
+        "eslint": "^8.46.0",
+        "husky": "^8.0.3",
+        "lint-staged": "^13.2.3",
+        "node-gyp": "^9.4.0",
+        "prettier": "^2.8.8"
     },
     "prettier": "@navikt/eslint-config-teamsykmelding/prettier"
 }

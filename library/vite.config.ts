@@ -14,9 +14,9 @@ module.exports = defineConfig({
             fileName: (format) => `dinesykmeldte-sidemeny.${format}.js`,
         },
         rollupOptions: {
-            external: ['react', '@navikt/ds-react', '@navikt/ds-icons'],
+            external: ['react', '@navikt/ds-react', '@navikt/aksel-icons'],
             output: {
-                globals: { react: 'React', '@navikt/ds-react': 'ds-react', '@navikt/ds-icons': 'ds-icons' },
+                globals: { react: 'React', '@navikt/ds-react': 'ds-react', '@navikt/aksel-icons': 'aksel-icons' },
             },
         },
     },
@@ -26,10 +26,4 @@ module.exports = defineConfig({
             include: './lib',
         }),
     ],
-    test: {
-        globals: true,
-        environment: 'jsdom',
-        setupFiles: './test/setupTests.ts',
-        css: true,
-    },
 });
