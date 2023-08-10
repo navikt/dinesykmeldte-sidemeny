@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bandage } from '@navikt/ds-icons';
+import { BandageIcon } from '@navikt/aksel-icons';
 
 import { render, within, screen } from '../../../test/testUtils';
 
@@ -8,7 +8,7 @@ import PageHeader from './PageHeader';
 describe('PageWrapper', () => {
     it('should render content', () => {
         render(
-            <PageHeader header={{ title: 'Test Title', Icon: Bandage, subtitle: 'This is a subtitle' }}>
+            <PageHeader header={{ title: 'Test Title', Icon: BandageIcon, subtitle: 'This is a subtitle' }}>
                 <div>These are children</div>
             </PageHeader>,
         );
