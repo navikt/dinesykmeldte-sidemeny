@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from 'next/document';
-import { Components, fetchDecoratorReact } from '@navikt/nav-dekoratoren-moduler/ssr';
+import { DecoratorComponents, fetchDecoratorReact } from '@navikt/nav-dekoratoren-moduler/ssr';
 
 const getDocumentParameter = (initialProps: DocumentInitialProps, name: string): string => {
     return initialProps.head?.find((element) => element?.props?.name === name)?.props?.content;
 };
 
 interface Props {
-    Decorator: Components;
+    Decorator: DecoratorComponents;
     language: string;
 }
 
@@ -17,8 +17,9 @@ class MyDocument extends Document<Props> {
 
         const Decorator = await fetchDecoratorReact({
             env: 'prod',
-            chatbot: false,
-            context: 'arbeidsgiver',
+            params: {
+                context: 'arbeidsgiver',
+            },
         });
 
         const language = getDocumentParameter(initialProps, 'lang');
@@ -26,7 +27,7 @@ class MyDocument extends Document<Props> {
         return { ...initialProps, Decorator, language };
     }
 
-    render(): JSX.Element {
+    render(): ReactElement {
         const { Decorator, language } = this.props;
 
         return (
