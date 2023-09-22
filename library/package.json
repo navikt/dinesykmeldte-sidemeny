@@ -46,7 +46,7 @@
         "typescript": "^4.9.5",
         "vite": "^3.2.7",
         "vite-plugin-dts": "^1.7.3",
-        "vitest": "^0.34.1"
+        "vitest": "^0.34.5"
     },
     "eslintConfig": {
         "extends": "@navikt/eslint-config-teamsykmelding"
