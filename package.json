@@ -16,7 +16,7 @@
         "lint": "yarn workspaces foreach -pi run lint"
     },
     "devDependencies": {
-        "eslint": "^8.46.0",
+        "eslint": "^8.51.0",
         "husky": "^8.0.3",
         "lint-staged": "^13.2.3",
         "node-gyp": "^9.4.0",
