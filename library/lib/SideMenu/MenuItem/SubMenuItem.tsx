@@ -14,9 +14,7 @@ export function SubMenuItem({ page }: { page: ChildPages }): JSX.Element {
         <li className={styles.subMenuItem}>
             <div className={cn('navds-button--small', styles.activeSubItem)}>
                 <Icon role="img" aria-hidden />
-                <Label size="small">
-                    {page}
-                </Label>
+                <Label size="small">{page}</Label>
             </div>
         </li>
     );
