@@ -8,12 +8,12 @@
     "files": [
         "dist"
     ],
-    "module": "./dist/dinesykmeldte-sidemeny.js",
+    "module": "./dist/dinesykmeldte-sidemeny.mjs",
     "types": "./dist/lib/main.d.ts",
     "style": "./dist/style.css",
     "exports": {
         ".": {
-            "import": "./dist/dinesykmeldte-sidemeny.js"
+            "import": "./dist/dinesykmeldte-sidemeny.mjs"
         },
         "./dist/style.css": {
             "import": "./dist/style.css"
