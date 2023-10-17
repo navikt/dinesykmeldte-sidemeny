@@ -14,9 +14,14 @@ export default defineConfig({
             fileName: (format) => `dinesykmeldte-sidemeny.${format}.js`,
         },
         rollupOptions: {
-            external: ['react', '@navikt/ds-react', '@navikt/aksel-icons'],
+            external: ['react', 'react-dom', '@navikt/ds-react', '@navikt/aksel-icons', 'clsx'],
             output: {
-                globals: { react: 'React', '@navikt/ds-react': 'ds-react', '@navikt/aksel-icons': 'aksel-icons' },
+                globals: {
+                    clsx: 'cn',
+                    react: 'React',
+                    '@navikt/ds-react': 'ds-react',
+                    '@navikt/aksel-icons': 'aksel-icons',
+                },
             },
         },
     },

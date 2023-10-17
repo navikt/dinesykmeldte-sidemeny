@@ -1,10 +1,10 @@
-import React, { PropsWithChildren, ReactNode } from 'react'
+import React, { PropsWithChildren, ReactElement, ReactNode } from 'react'
 import cn from 'clsx'
 
 import { ExpandableMobileMenu } from '../SideMenu/ExpandableMobileMenu/ExpandableMobileMenu'
 
-import styles from './PageContainer.module.css'
 import PageHeader, { HeaderTitle } from './PageHeader/PageHeader'
+import styles from './PageContainer.module.css'
 
 type PageContainerProps = {
     /* You can opt out of the header by explicitly setting it to false. This will be removed in the future. */
@@ -34,7 +34,7 @@ export const PageContainer = ({
     navigation,
     children,
     className,
-}: PropsWithChildren<PageContainerProps>): JSX.Element => {
+}: PropsWithChildren<PageContainerProps>): ReactElement => {
     return (
         <PageHeader header={header} headerRight={headerRight} hideHeaderOnMobile={!!navigation}>
             {navigation && sykmeldt ? (
