@@ -9,12 +9,13 @@ import { defineConfig } from 'vite'
 export default defineConfig({
     build: {
         lib: {
+            formats: ['es'],
             entry: path.resolve(__dirname, 'lib/main.ts'),
             name: 'DineSykmeldteSidemeny',
-            fileName: (format) => `dinesykmeldte-sidemeny.${format}.js`,
+            fileName: `dinesykmeldte-sidemeny.js`,
         },
         rollupOptions: {
-            external: ['react', 'react-dom', '@navikt/ds-react', '@navikt/aksel-icons', 'clsx'],
+            external: ['react', 'react/jsx-runtime', 'react-dom', '@navikt/ds-react', '@navikt/aksel-icons', 'clsx'],
             output: {
                 globals: {
                     clsx: 'cn',

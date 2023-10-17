@@ -9,18 +9,15 @@
         "dist"
     ],
     "type": "module",
-    "main": "./dist/dinesykmeldte-sidemeny.umd.js",
-    "module": "./dist/dinesykmeldte-sidemeny.es.js",
+    "module": "./dist/dinesykmeldte-sidemeny.js",
     "types": "./dist/lib/main.d.ts",
     "style": "./dist/style.css",
     "exports": {
         ".": {
-            "import": "./dist/dinesykmeldte-sidemeny.es.js",
-            "require": "./dist/dinesykmeldte-sidemeny.umd.js"
+            "import": "./dist/dinesykmeldte-sidemeny.js"
         },
         "./dist/style.css": {
-            "import": "./dist/style.css",
-            "require": "./dist/style.css"
+            "import": "./dist/style.css"
         }
     },
     "scripts": {
