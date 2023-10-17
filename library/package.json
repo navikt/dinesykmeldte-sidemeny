@@ -11,7 +11,7 @@
     "type": "module",
     "main": "./dist/dinesykmeldte-sidemeny.umd.js",
     "module": "./dist/dinesykmeldte-sidemeny.es.js",
-    "types": "./dist/main.d.ts",
+    "types": "./dist//lib/main.d.ts",
     "style": "./dist/style.css",
     "exports": {
         ".": {
