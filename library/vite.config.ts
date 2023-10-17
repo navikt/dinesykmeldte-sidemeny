@@ -12,7 +12,7 @@ export default defineConfig({
             formats: ['es'],
             entry: path.resolve(__dirname, 'lib/main.ts'),
             name: 'DineSykmeldteSidemeny',
-            fileName: `dinesykmeldte-sidemeny.js`,
+            fileName: `dinesykmeldte-sidemeny`,
         },
         rollupOptions: {
             external: ['react', 'react/jsx-runtime', 'react-dom', '@navikt/ds-react', '@navikt/aksel-icons', 'clsx'],
