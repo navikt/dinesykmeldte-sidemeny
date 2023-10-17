@@ -1,31 +1,31 @@
-import React, { PropsWithChildren, ReactNode } from 'react';
-import cn from 'clsx';
+import React, { PropsWithChildren, ReactNode } from 'react'
+import cn from 'clsx'
 
-import { ExpandableMobileMenu } from '../SideMenu/ExpandableMobileMenu/ExpandableMobileMenu';
+import { ExpandableMobileMenu } from '../SideMenu/ExpandableMobileMenu/ExpandableMobileMenu'
 
-import styles from './PageContainer.module.css';
-import PageHeader, { HeaderTitle } from './PageHeader/PageHeader';
+import styles from './PageContainer.module.css'
+import PageHeader, { HeaderTitle } from './PageHeader/PageHeader'
 
 type PageContainerProps = {
     /* You can opt out of the header by explicitly setting it to false. This will be removed in the future. */
-    header: HeaderTitle | false;
-    headerRight?: ReactNode;
-    className?: string;
-} & SykmeldtNavigation;
+    header: HeaderTitle | false
+    headerRight?: ReactNode
+    className?: string
+} & SykmeldtNavigation
 
 // Either both sykmeldt and navigation needs to be provided, or none of them
 type SykmeldtNavigation =
     | {
           sykmeldt: {
-              navn: string;
-              fnr: string;
-          } | null;
-          navigation: ReactNode;
+              navn: string
+              fnr: string
+          } | null
+          navigation: ReactNode
       }
     | {
-          sykmeldt?: never;
-          navigation?: never;
-      };
+          sykmeldt?: never
+          navigation?: never
+      }
 
 export const PageContainer = ({
     header,
@@ -59,5 +59,5 @@ export const PageContainer = ({
                 </div>
             </div>
         </PageHeader>
-    );
-};
+    )
+}

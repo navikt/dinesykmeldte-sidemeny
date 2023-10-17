@@ -1,16 +1,16 @@
-import React, { PropsWithChildren } from 'react';
-import { Accordion, BodyShort, Heading } from '@navikt/ds-react';
-import { PersonIcon } from '@navikt/aksel-icons';
-import cn from 'clsx';
+import React, { PropsWithChildren } from 'react'
+import { Accordion, BodyShort, Heading } from '@navikt/ds-react'
+import { PersonIcon } from '@navikt/aksel-icons'
+import cn from 'clsx'
 
-import { addSpaceAfterEverySixthCharacter } from '../../utils/stringUtils';
+import { addSpaceAfterEverySixthCharacter } from '../../utils/stringUtils'
 
-import styles from './ExpandableMobileMenu.module.css';
+import styles from './ExpandableMobileMenu.module.css'
 
 interface Props {
-    sykmeldtNavn: string;
-    sykmeldtFnr: string;
-    className?: string;
+    sykmeldtNavn: string
+    sykmeldtFnr: string
+    className?: string
 }
 
 export const ExpandableMobileMenu = ({
@@ -36,5 +36,5 @@ export const ExpandableMobileMenu = ({
                 <Accordion.Content className={styles.accordionContent}>{children}</Accordion.Content>
             </Accordion.Item>
         </Accordion>
-    );
-};
+    )
+}

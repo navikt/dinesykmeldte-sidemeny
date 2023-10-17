@@ -1,9 +1,9 @@
-import React from 'react';
-import Link from 'next/link';
-import { SideMenu, Pages, ChildPages, RootPages } from '@navikt/dinesykmeldte-sidemeny';
+import React from 'react'
+import Link from 'next/link'
+import { SideMenu, Pages, ChildPages, RootPages } from '@navikt/dinesykmeldte-sidemeny'
 
 interface Props {
-    value: string;
+    value: string
 }
 
 function MyAppsSideMenu({ value }: Props): JSX.Element {
@@ -19,7 +19,7 @@ function MyAppsSideMenu({ value }: Props): JSX.Element {
                 Dialogmoter: {
                     notifications: 3,
                     internalRoute: ({ children, ...rest }) => (
-                        <Link href="/some/route" passHref>
+                        <Link href="/some/route" passHref legacyBehavior>
                             <a {...rest}>{children}</a>
                         </Link>
                     ),
@@ -27,7 +27,7 @@ function MyAppsSideMenu({ value }: Props): JSX.Element {
                 Oppfolgingsplaner: {
                     notifications: 0,
                     internalRoute: ({ children, ...rest }) => (
-                        <Link href="/some-other/route" passHref>
+                        <Link href="/some-other/route" passHref legacyBehavior>
                             <a {...rest}>{children}</a>
                         </Link>
                     ),
@@ -35,34 +35,34 @@ function MyAppsSideMenu({ value }: Props): JSX.Element {
                 DineSykmeldte: 0,
             }}
         />
-    );
+    )
 }
 
 function routeToEnum(value: string): Pages {
     switch (value) {
         case 'sykmeldinger':
-            return RootPages.Sykmeldinger;
+            return RootPages.Sykmeldinger
         case 'soknader':
-            return RootPages.Soknader;
+            return RootPages.Soknader
         case 'meldinger':
-            return RootPages.Meldinger;
+            return RootPages.Meldinger
         case 'dialogmoter':
-            return RootPages.Dialogmoter;
+            return RootPages.Dialogmoter
         case 'oppfolgingsplaner':
-            return RootPages.Oppfolgingsplaner;
+            return RootPages.Oppfolgingsplaner
         case 'sykmelding':
-            return ChildPages.Sykmelding;
+            return ChildPages.Sykmelding
         case 'soknad':
-            return ChildPages.Soknad;
+            return ChildPages.Soknad
         case 'melding':
-            return ChildPages.Melding;
+            return ChildPages.Melding
         case 'dialogmote':
-            return ChildPages.Dialogmote;
+            return ChildPages.Dialogmote
         case 'oppfolgingsplan':
-            return ChildPages.Oppfolgingsplan;
+            return ChildPages.Oppfolgingsplan
         default:
-            throw new Error(`Unknown route: ${value}`);
+            throw new Error(`Unknown route: ${value}`)
     }
 }
 
-export default MyAppsSideMenu;
+export default MyAppsSideMenu

@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import { PageContainer } from '@navikt/dinesykmeldte-sidemeny';
-import { Accordion, Cell, Grid, Heading, Select, ToggleGroup } from '@navikt/ds-react';
-import { BandageIcon } from '@navikt/aksel-icons';
+import React, { useState } from 'react'
+import type { NextPage } from 'next'
+import Head from 'next/head'
+import { PageContainer } from '@navikt/dinesykmeldte-sidemeny'
+import { Accordion, Cell, Grid, Heading, Select, ToggleGroup } from '@navikt/ds-react'
+import { BandageIcon } from '@navikt/aksel-icons'
 
-import styles from '../styles/Home.module.css';
-import MyAppsSideMenu from '../components/MyAppsSideMenu';
+import styles from '../styles/Home.module.css'
+import MyAppsSideMenu from '../components/MyAppsSideMenu'
 
 const Home: NextPage = () => {
-    const [sideMenu, setSideMenu] = useState(true);
-    const [headerExtra, setHeaderExtra] = useState(true);
-    const [value, setValue] = useState('sykmeldinger');
+    const [sideMenu, setSideMenu] = useState(true)
+    const [headerExtra, setHeaderExtra] = useState(true)
+    const [value, setValue] = useState('sykmeldinger')
 
     return (
         <PageContainer
@@ -72,7 +72,7 @@ const Home: NextPage = () => {
                 <button onClick={() => setHeaderExtra((b) => !b)}>Hide header extra</button>
             </div>
         </PageContainer>
-    );
-};
+    )
+}
 
-export default Home;
+export default Home

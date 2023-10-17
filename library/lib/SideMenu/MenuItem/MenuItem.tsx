@@ -1,32 +1,32 @@
-import { Button } from '@navikt/ds-react';
-import React from 'react';
-import cn from 'clsx';
+import React from 'react'
+import { Button } from '@navikt/ds-react'
+import cn from 'clsx'
 
-import { Pages, RootPages, RouteVariant } from '../../types';
+import { Pages, RootPages, RouteVariant } from '../../types'
 
-import { isChildPageActive, pageToIcon, pageToUrl, parentToChild } from './MenuItemUtils';
-import DynamicIcon from './DynamicIcon';
-import styles from './MenuItem.module.css';
-import { SubMenuItem } from './SubMenuItem';
+import { isChildPageActive, pageToIcon, pageToUrl, parentToChild } from './MenuItemUtils'
+import DynamicIcon from './DynamicIcon'
+import styles from './MenuItem.module.css'
+import { SubMenuItem } from './SubMenuItem'
 
 interface Props {
-    sykmeldtId: string;
-    page: RootPages;
-    activePage: Pages;
-    route: RouteVariant;
+    sykmeldtId: string
+    page: RootPages
+    activePage: Pages
+    route: RouteVariant
 }
 
 function MenuItem({ sykmeldtId, page, activePage, route }: Props): JSX.Element | null {
     // Hide if route is sett to false
-    if (typeof route === 'boolean') return null;
+    if (typeof route === 'boolean') return null
     // Also hide if custom route with hidden true
-    if (typeof route !== 'number' && route.hide) return null;
+    if (typeof route !== 'number' && route.hide) return null
 
-    const Icon = pageToIcon(page);
-    const childPageActive = isChildPageActive(page, activePage);
+    const Icon = pageToIcon(page)
+    const childPageActive = isChildPageActive(page, activePage)
 
     if (typeof route === 'number') {
-        const notifications = route;
+        const notifications = route
         return (
             <>
                 <li className={styles.menuItem}>
@@ -46,38 +46,28 @@ function MenuItem({ sykmeldtId, page, activePage, route }: Props): JSX.Element |
                 </li>
                 {childPageActive && <SubMenuItem page={parentToChild(page)} />}
             </>
-        );
+        )
     }
 
     return (
         <>
             <li className={styles.menuItem}>
-                {
-                    <route.internalRoute
-                        className={cn(
-                            'navds-button navds-button--tertiary navds-button--small',
-                            styles.menuItemButton,
-                            {
-                                [styles.activeItem]: activePage === page,
-                                [styles.notifyingItem]: route.notifications > 0,
-                            },
-                        )}
-                    >
-                        <span className="navds-button__icon">
-                            <DynamicIcon
-                                Icon={Icon}
-                                childActive={childPageActive}
-                                notifications={route.notifications}
-                            />
-                        </span>
+                <route.internalRoute
+                    className={cn('navds-button navds-button--tertiary navds-button--small', styles.menuItemButton, {
+                        [styles.activeItem]: activePage === page,
+                        [styles.notifyingItem]: route.notifications > 0,
+                    })}
+                >
+                    <span className="navds-button__icon">
+                        <DynamicIcon Icon={Icon} childActive={childPageActive} notifications={route.notifications} />
+                    </span>
 
-                        <span className="navds-label navds-label--small">{page}</span>
-                    </route.internalRoute>
-                }
+                    <span className="navds-label navds-label--small">{page}</span>
+                </route.internalRoute>
             </li>
             {childPageActive && <SubMenuItem page={parentToChild(page)} />}
         </>
-    );
+    )
 }
 
-export default MenuItem;
+export default MenuItem

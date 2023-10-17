@@ -5,65 +5,65 @@ import {
     EnvelopeClosedIcon,
     DocPencilIcon,
     TasklistIcon,
-} from '@navikt/aksel-icons';
+} from '@navikt/aksel-icons'
 
-import { ChildPages, Pages, RootPages } from '../../types';
+import { ChildPages, Pages, RootPages } from '../../types'
 
 export function isChildPageActive(page: RootPages, activePage: Pages): boolean {
     switch (page) {
         case RootPages.DineSykmeldte:
-            return false;
+            return false
         case RootPages.Sykmeldinger:
-            return activePage === ChildPages.Sykmelding;
+            return activePage === ChildPages.Sykmelding
         case RootPages.Soknader:
-            return activePage === ChildPages.Soknad;
+            return activePage === ChildPages.Soknad
         case RootPages.Meldinger:
-            return activePage === ChildPages.Melding;
+            return activePage === ChildPages.Melding
         case RootPages.Dialogmoter:
-            return activePage === ChildPages.Dialogmote;
+            return activePage === ChildPages.Dialogmote
         case RootPages.Oppfolgingsplaner:
-            return activePage === ChildPages.Oppfolgingsplan;
+            return activePage === ChildPages.Oppfolgingsplan
     }
 }
 
 export function parentToChild(page: RootPages): ChildPages {
     switch (page) {
         case RootPages.DineSykmeldte:
-            throw new Error('DineSykmeldte root page has no children');
+            throw new Error('DineSykmeldte root page has no children')
         case RootPages.Sykmeldinger:
-            return ChildPages.Sykmelding;
+            return ChildPages.Sykmelding
         case RootPages.Soknader:
-            return ChildPages.Soknad;
+            return ChildPages.Soknad
         case RootPages.Meldinger:
-            return ChildPages.Melding;
+            return ChildPages.Melding
         case RootPages.Dialogmoter:
-            return ChildPages.Dialogmote;
+            return ChildPages.Dialogmote
         case RootPages.Oppfolgingsplaner:
-            return ChildPages.Oppfolgingsplan;
+            return ChildPages.Oppfolgingsplan
     }
 }
 
 export function pageToUrl(activePage: Pages, page: RootPages, sykmeldtId: string): string {
     switch (page) {
         case RootPages.DineSykmeldte:
-            return '/arbeidsgiver/sykmeldte';
+            return '/arbeidsgiver/sykmeldte'
         case RootPages.Sykmeldinger:
-            return `/arbeidsgiver/sykmeldte/sykmeldt/${sykmeldtId}/sykmeldinger`;
+            return `/arbeidsgiver/sykmeldte/sykmeldt/${sykmeldtId}/sykmeldinger`
         case RootPages.Soknader:
-            return `/arbeidsgiver/sykmeldte/sykmeldt/${sykmeldtId}/soknader`;
+            return `/arbeidsgiver/sykmeldte/sykmeldt/${sykmeldtId}/soknader`
         case RootPages.Meldinger:
-            return `/arbeidsgiver/sykmeldte/sykmeldt/${sykmeldtId}/meldinger`;
+            return `/arbeidsgiver/sykmeldte/sykmeldt/${sykmeldtId}/meldinger`
         case RootPages.Dialogmoter:
             if (isDineSykmeldte(activePage)) {
-                return `/arbeidsgiver/sykmeldte/dialogmoter/${sykmeldtId}`;
+                return `/arbeidsgiver/sykmeldte/dialogmoter/${sykmeldtId}`
             } else {
-                return `/syk/dialogmoter/arbeidsgiver/${sykmeldtId}`;
+                return `/syk/dialogmoter/arbeidsgiver/${sykmeldtId}`
             }
         case RootPages.Oppfolgingsplaner:
             if (isDineSykmeldte(activePage)) {
-                return `/arbeidsgiver/sykmeldte/oppfolgingsplaner/${sykmeldtId}`;
+                return `/arbeidsgiver/sykmeldte/oppfolgingsplaner/${sykmeldtId}`
             } else {
-                return `/syk/oppfolgingsplaner/arbeidsgiver/${sykmeldtId}`;
+                return `/syk/oppfolgingsplaner/arbeidsgiver/${sykmeldtId}`
             }
     }
 }
@@ -71,22 +71,22 @@ export function pageToUrl(activePage: Pages, page: RootPages, sykmeldtId: string
 export function pageToIcon(page: Pages): typeof BandageIcon {
     switch (page) {
         case RootPages.DineSykmeldte:
-            return PersonGroupIcon;
+            return PersonGroupIcon
         case RootPages.Soknader:
         case ChildPages.Soknad:
-            return TasklistIcon;
+            return TasklistIcon
         case RootPages.Meldinger:
         case ChildPages.Melding:
-            return EnvelopeClosedIcon;
+            return EnvelopeClosedIcon
         case RootPages.Dialogmoter:
         case ChildPages.Dialogmote:
-            return Chat2Icon;
+            return Chat2Icon
         case RootPages.Oppfolgingsplaner:
         case ChildPages.Oppfolgingsplan:
-            return DocPencilIcon;
+            return DocPencilIcon
         case RootPages.Sykmeldinger:
         case ChildPages.Sykmelding:
-            return BandageIcon;
+            return BandageIcon
     }
 }
 
@@ -99,11 +99,11 @@ function isDineSykmeldte(activePage: Pages): boolean {
         case RootPages.Meldinger:
         case ChildPages.Melding:
         case RootPages.DineSykmeldte:
-            return true;
+            return true
         case RootPages.Dialogmoter:
         case RootPages.Oppfolgingsplaner:
         case ChildPages.Dialogmote:
         case ChildPages.Oppfolgingsplan:
-            return false;
+            return false
     }
 }

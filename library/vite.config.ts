@@ -1,12 +1,12 @@
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
 
-import * as path from 'path';
+import * as path from 'path'
 
-import dts from 'vite-plugin-dts';
-import { defineConfig } from 'vite';
+import dts from 'vite-plugin-dts'
+import { defineConfig } from 'vite'
 
-module.exports = defineConfig({
+export default defineConfig({
     build: {
         lib: {
             entry: path.resolve(__dirname, 'lib/main.ts'),
@@ -22,8 +22,8 @@ module.exports = defineConfig({
     },
     plugins: [
         dts({
-            tsConfigFilePath: './tsconfig.json',
+            tsconfigPath: './tsconfig.json',
             include: './lib',
         }),
     ],
-});
+})

@@ -1,34 +1,34 @@
-import React, { ReactElement } from 'react';
-import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from 'next/document';
-import { DecoratorComponents, fetchDecoratorReact } from '@navikt/nav-dekoratoren-moduler/ssr';
+import React, { ReactElement } from 'react'
+import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from 'next/document'
+import { DecoratorComponents, fetchDecoratorReact } from '@navikt/nav-dekoratoren-moduler/ssr'
 
 const getDocumentParameter = (initialProps: DocumentInitialProps, name: string): string => {
-    return initialProps.head?.find((element) => element?.props?.name === name)?.props?.content;
-};
+    return initialProps.head?.find((element) => element?.props?.name === name)?.props?.content
+}
 
 interface Props {
-    Decorator: DecoratorComponents;
-    language: string;
+    Decorator: DecoratorComponents
+    language: string
 }
 
 class MyDocument extends Document<Props> {
     static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps & Props> {
-        const initialProps = await Document.getInitialProps(ctx);
+        const initialProps = await Document.getInitialProps(ctx)
 
         const Decorator = await fetchDecoratorReact({
             env: 'prod',
             params: {
                 context: 'arbeidsgiver',
             },
-        });
+        })
 
-        const language = getDocumentParameter(initialProps, 'lang');
+        const language = getDocumentParameter(initialProps, 'lang')
 
-        return { ...initialProps, Decorator, language };
+        return { ...initialProps, Decorator, language }
     }
 
     render(): ReactElement {
-        const { Decorator, language } = this.props;
+        const { Decorator, language } = this.props
 
         return (
             <Html lang={language || 'no'}>
@@ -43,8 +43,8 @@ class MyDocument extends Document<Props> {
                     <NextScript />
                 </body>
             </Html>
-        );
+        )
     }
 }
 
-export default MyDocument;
+export default MyDocument

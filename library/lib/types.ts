@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react'
 
 export enum RootPages {
     Sykmeldinger = 'Sykmeldinger',
@@ -17,19 +17,19 @@ export enum ChildPages {
     Oppfolgingsplan = 'Oppfølgingsplan',
 }
 
-export type Pages = RootPages | ChildPages;
+export type Pages = RootPages | ChildPages
 
-export type Route = (props: PropsWithChildren<{ className?: string }>) => JSX.Element;
+export type Route = (props: PropsWithChildren<{ className?: string }>) => JSX.Element
 
 export type RouteVariant =
     | number
     | false
     | {
-          internalRoute: Route;
-          notifications: number;
-          hide?: boolean;
-      };
+          internalRoute: Route
+          notifications: number
+          hide?: boolean
+      }
 
 export type Routes = {
-    [Val in keyof typeof RootPages]: RouteVariant;
-};
+    [Val in keyof typeof RootPages]: RouteVariant
+}

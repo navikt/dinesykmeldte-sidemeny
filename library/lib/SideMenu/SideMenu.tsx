@@ -1,17 +1,17 @@
-import React from 'react';
-import { Heading } from '@navikt/ds-react';
+import React from 'react'
+import { Heading } from '@navikt/ds-react'
 
-import { Pages, RootPages, Routes } from '../types';
-import { formatFirstNamePossessive } from '../utils';
+import { Pages, RootPages, Routes } from '../types'
+import { formatFirstNamePossessive } from '../utils'
 
-import MenuItem from './MenuItem/MenuItem';
-import styles from './SideMenu.module.css';
+import MenuItem from './MenuItem/MenuItem'
+import styles from './SideMenu.module.css'
 
 export interface SideMenuProps {
-    sykmeldtName: string;
-    sykmeldtId: string;
-    activePage: Pages;
-    routes: Routes;
+    sykmeldtName: string
+    sykmeldtId: string
+    activePage: Pages
+    routes: Routes
 }
 
 export function SideMenu({ sykmeldtName, sykmeldtId, activePage, routes }: SideMenuProps): JSX.Element {
@@ -59,5 +59,5 @@ export function SideMenu({ sykmeldtName, sykmeldtId, activePage, routes }: SideM
                 />
             </ul>
         </nav>
-    );
+    )
 }

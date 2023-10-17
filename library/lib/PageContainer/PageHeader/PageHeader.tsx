@@ -1,21 +1,21 @@
-import { BodyShort, Heading, Skeleton } from '@navikt/ds-react';
-import React, { PropsWithChildren, ReactNode } from 'react';
-import { BandageIcon } from '@navikt/aksel-icons';
-import cn from 'clsx';
+import { BodyShort, Heading, Skeleton } from '@navikt/ds-react'
+import React, { PropsWithChildren, ReactNode } from 'react'
+import { BandageIcon } from '@navikt/aksel-icons'
+import cn from 'clsx'
 
-import styles from './PageHeader.module.css';
+import styles from './PageHeader.module.css'
 
 export type HeaderTitle = {
-    Icon?: typeof BandageIcon;
-    title: string;
-    subtitle?: ReactNode;
-    subtitleSkeleton?: boolean;
-};
+    Icon?: typeof BandageIcon
+    title: string
+    subtitle?: ReactNode
+    subtitleSkeleton?: boolean
+}
 
 interface Props {
-    header: HeaderTitle | false;
-    headerRight?: ReactNode;
-    hideHeaderOnMobile?: boolean;
+    header: HeaderTitle | false
+    headerRight?: ReactNode
+    hideHeaderOnMobile?: boolean
 }
 
 function PageHeader({ header, headerRight, hideHeaderOnMobile, children }: PropsWithChildren<Props>): JSX.Element {
@@ -48,7 +48,7 @@ function PageHeader({ header, headerRight, hideHeaderOnMobile, children }: Props
             )}
             {children}
         </>
-    );
+    )
 }
 
-export default PageHeader;
+export default PageHeader

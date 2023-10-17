@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
 function Route(): JSX.Element {
-    return <div>some other route</div>;
+    return <div>some other route</div>
 }
 
-export default Route;
+export default Route

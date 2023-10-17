@@ -16,5 +16,5 @@
 }
 
 .toggleGroup > :global(.navds-toggle-group) > button {
-    flex: 1 0 15%
+    flex: 1 0 15%;
 }
