@@ -9,7 +9,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
     build: {
         lib: {
-            formats: ['es'],
+            formats: ['cjs'],
             entry: path.resolve(__dirname, 'lib/main.ts'),
             name: 'DineSykmeldteSidemeny',
             fileName: `dinesykmeldte-sidemeny`,
