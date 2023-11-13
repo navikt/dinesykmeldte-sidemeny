@@ -1,19 +1,19 @@
 {
     "name": "dinesykmeldte-sidemeny-root",
     "version": "1.0.0",
-    "packageManager": "yarn@3.2.3",
+    "packageManager": "yarn@4.0.1",
     "engines": {
-        "node": "18"
+        "node": "20"
     },
     "workspaces": [
         "library",
         "example"
     ],
     "scripts": {
-        "dev": "yarn workspaces foreach -pi run dev",
+        "dev": "yarn workspaces foreach --all -pi run dev",
         "build": "yarn workspace @navikt/dinesykmeldte-sidemeny run build",
         "test": "yarn workspace @navikt/dinesykmeldte-sidemeny run test",
-        "lint": "yarn workspaces foreach -pi run lint"
+        "lint": "yarn workspaces foreach --all -pi run lint"
     },
     "devDependencies": {
         "eslint": "^8.51.0",

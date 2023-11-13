@@ -3,11 +3,6 @@ name: Deploy example site to Pages
 on:
   push:
     branches: ['main']
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-env:
-  NPM_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
 
 permissions:
   contents: read
@@ -22,23 +17,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - uses: navikt/teamsykmelding-github-actions-workflows/actions/yarn-cached@node-20
         with:
-          node-version: 18
-          cache: 'yarn'
-      - name: Restore cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            .next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
-      - name: Install dependencies
-        run: yarn
+          NPM_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
       - name: Build library
         run: yarn build
         working-directory: ./library
