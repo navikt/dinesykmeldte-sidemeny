@@ -59,6 +59,8 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
           git remote set-url origin https://github-actions[bot]:$NAV_DS_TOKEN@github.com/$GITHUB_REPOSITORY.git
+      - run: yarn config set version-branch v5
+        working-directory: ./library
       - run: yarn version -i patch
         working-directory: ./library
       - run: git add . && git commit -m "[skip ci] bump version to $(jq -r .version library/package.json)" && git push
