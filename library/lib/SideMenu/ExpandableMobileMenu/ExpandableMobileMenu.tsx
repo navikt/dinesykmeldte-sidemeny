@@ -1,5 +1,6 @@
 import React, { PropsWithChildren } from 'react'
-import { Accordion, BodyShort, Heading } from '@navikt/ds-react'
+import { BodyShort, Heading } from '@navikt/ds-react/esm/typography'
+import { Accordion } from '@navikt/ds-react/esm/accordion'
 import { PersonIcon } from '@navikt/aksel-icons'
 import cn from 'clsx'
 

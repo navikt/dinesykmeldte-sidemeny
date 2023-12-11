@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { PageContainer } from '@navikt/dinesykmeldte-sidemeny'
-import { Accordion, Cell, Grid, Heading, Select, ToggleGroup } from '@navikt/ds-react'
+import { Accordion, HGrid, Heading, Select, ToggleGroup } from '@navikt/ds-react'
 import { BandageIcon } from '@navikt/aksel-icons'
 
 import styles from '../styles/Home.module.css'
@@ -55,18 +55,16 @@ const Home: NextPage = () => {
                 <ToggleGroup.Item value="dialogmote">Dialogmøte</ToggleGroup.Item>
                 <ToggleGroup.Item value="oppfolgingsplan">Oppfolgingsplan</ToggleGroup.Item>
             </ToggleGroup>
-            <Grid>
+            <HGrid gap="6" columns={{ xs: 1 }}>
                 {Array.from(new Array(25).keys()).map((index) => (
-                    <Cell xs={12} key={index}>
-                        <Accordion>
-                            <Accordion.Item>
-                                <Accordion.Header>Fake Accordion {index + 1}</Accordion.Header>
-                                <Accordion.Content>Some content</Accordion.Content>
-                            </Accordion.Item>
-                        </Accordion>
-                    </Cell>
+                    <Accordion key={index}>
+                        <Accordion.Item>
+                            <Accordion.Header>Fake Accordion {index + 1}</Accordion.Header>
+                            <Accordion.Content>Some content</Accordion.Content>
+                        </Accordion.Item>
+                    </Accordion>
                 ))}
-            </Grid>
+            </HGrid>
             <div className={styles.extraFloatingButtons}>
                 <button onClick={() => setSideMenu((b) => !b)}>Hide menu</button>
                 <button onClick={() => setHeaderExtra((b) => !b)}>Hide header extra</button>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '@navikt/ds-react'
+import { Button } from '@navikt/ds-react/esm/button'
 import cn from 'clsx'
 
 import { Pages, RootPages, RouteVariant } from '../../types'
