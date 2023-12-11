@@ -10,7 +10,7 @@ export type HeaderTitle = {
     title: string
     subtitle?: ReactNode
     subtitleSkeleton?: boolean
-    ariaLabelledby?: string
+    accessibilityTitle?: string
 }
 
 interface Props {
@@ -28,19 +28,17 @@ function PageHeader({ header, headerRight, hideHeaderOnMobile, children }: Props
                         [styles.hideHeaderOnMobile]: hideHeaderOnMobile,
                     })}
                 >
-                    <section
-                        className={cn(styles.wrapper)}
-                        aria-labelledby={header.ariaLabelledby ? header.ariaLabelledby : 'page-header'}
-                    >
+                    <section className={cn(styles.wrapper)} aria-labelledby="page-header">
                         <div className={styles.heading}>
                             {header.Icon && <header.Icon role="img" aria-hidden />}
                             <div>
                                 <Heading
-                                    id={header.ariaLabelledby ? header.ariaLabelledby : 'page-header'}
+                                    id="page-header"
                                     level="1"
                                     size="xlarge"
+                                    title={header.accessibilityTitle ? header.accessibilityTitle : header.title}
                                 >
-                                    {header.title}
+                                    <span aria-hidden>{header.title}</span>
                                 </Heading>
                                 {header.subtitle && (
                                     <BodyShort className={styles.subtitle}>{header.subtitle}</BodyShort>

@@ -11,6 +11,7 @@ interface Props {
     sykmeldtNavn: string
     sykmeldtFnr: string
     className?: string
+    accessibilityTitle?: string
 }
 
 export const ExpandableMobileMenu = ({
@@ -18,6 +19,7 @@ export const ExpandableMobileMenu = ({
     sykmeldtFnr,
     children,
     className,
+    accessibilityTitle,
 }: PropsWithChildren<Props>): JSX.Element => {
     return (
         <Accordion className={cn(styles.accordionMobileRoot, className)}>
@@ -26,8 +28,13 @@ export const ExpandableMobileMenu = ({
                     <div className={styles.accordionHeaderContent}>
                         <PersonIcon className={styles.peopleIcon} />
                         <div>
-                            <Heading className={styles.heading} size="xlarge" level="3">
-                                {sykmeldtNavn}
+                            <Heading
+                                className={styles.heading}
+                                size="xlarge"
+                                level="3"
+                                title={accessibilityTitle ? accessibilityTitle : sykmeldtNavn}
+                            >
+                                <span aria-hidden>{sykmeldtNavn}</span>
                             </Heading>
                             <BodyShort>{addSpaceAfterEverySixthCharacter(sykmeldtFnr)}</BodyShort>
                         </div>

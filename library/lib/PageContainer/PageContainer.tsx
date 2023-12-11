@@ -42,6 +42,7 @@ export const PageContainer = ({
                     sykmeldtNavn={sykmeldt.navn}
                     sykmeldtFnr={sykmeldt.fnr}
                     className={styles.mobileMenuAccordion}
+                    accessibilityTitle={header && header.accessibilityTitle ? header.accessibilityTitle : sykmeldt.navn}
                 >
                     {navigation}
                 </ExpandableMobileMenu>
