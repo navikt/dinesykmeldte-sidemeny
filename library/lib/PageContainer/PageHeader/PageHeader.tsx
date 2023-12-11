@@ -1,6 +1,5 @@
 import React, { PropsWithChildren, ReactNode } from 'react'
-import { BodyShort, Heading } from '@navikt/ds-react/esm/typography'
-import { Skeleton } from '@navikt/ds-react/esm/skeleton'
+import { Skeleton, BodyShort, Heading } from '@navikt/ds-react'
 import { BandageIcon } from '@navikt/aksel-icons'
 import cn from 'clsx'
 

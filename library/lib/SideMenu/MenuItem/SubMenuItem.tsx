@@ -1,5 +1,5 @@
 import cn from 'clsx'
-import { Label } from '@navikt/ds-react/esm/typography'
+import { Label } from '@navikt/ds-react'
 import React from 'react'
 
 import { ChildPages } from '../../types'

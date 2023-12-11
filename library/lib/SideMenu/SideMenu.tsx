@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heading } from '@navikt/ds-react/esm/typography'
+import { Heading } from '@navikt/ds-react'
 
 import { Pages, RootPages, Routes } from '../types'
 import { formatFirstNamePossessive } from '../utils'

@@ -15,17 +15,7 @@ export default defineConfig({
             fileName: `dinesykmeldte-sidemeny`,
         },
         rollupOptions: {
-            external: [
-                'react',
-                'react/jsx-runtime',
-                'react-dom',
-                '@navikt/ds-react/esm/typography',
-                '@navikt/ds-react/esm/button',
-                '@navikt/ds-react/esm/skeleton',
-                '@navikt/ds-react/esm/accordion',
-                '@navikt/aksel-icons',
-                'clsx',
-            ],
+            external: ['react', 'react/jsx-runtime', 'react-dom', '@navikt/ds-react', '@navikt/aksel-icons', 'clsx'],
             output: {
                 globals: {
                     clsx: 'cn',
