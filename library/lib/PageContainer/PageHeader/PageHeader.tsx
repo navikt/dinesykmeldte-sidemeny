@@ -16,9 +16,16 @@ interface Props {
     header: HeaderTitle | false
     headerRight?: ReactNode
     hideHeaderOnMobile?: boolean
+    ariaLabelledby?: string
 }
 
-function PageHeader({ header, headerRight, hideHeaderOnMobile, children }: PropsWithChildren<Props>): JSX.Element {
+function PageHeader({
+    header,
+    headerRight,
+    hideHeaderOnMobile,
+    children,
+    ariaLabelledby,
+}: PropsWithChildren<Props>): JSX.Element {
     return (
         <>
             {typeof header === 'object' && (
@@ -27,11 +34,14 @@ function PageHeader({ header, headerRight, hideHeaderOnMobile, children }: Props
                         [styles.hideHeaderOnMobile]: hideHeaderOnMobile,
                     })}
                 >
-                    <section className={cn(styles.wrapper)} aria-labelledby="page-header">
+                    <section
+                        className={cn(styles.wrapper)}
+                        aria-labelledby={ariaLabelledby ? ariaLabelledby : 'page-header'}
+                    >
                         <div className={styles.heading}>
                             {header.Icon && <header.Icon role="img" aria-hidden />}
                             <div>
-                                <Heading id="page-header" level="1" size="xlarge">
+                                <Heading id={ariaLabelledby ? ariaLabelledby : 'page-header'} level="1" size="xlarge">
                                     {header.title}
                                 </Heading>
                                 {header.subtitle && (
