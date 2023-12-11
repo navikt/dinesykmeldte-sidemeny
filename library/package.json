@@ -1,6 +1,7 @@
 {
     "name": "@navikt/dinesykmeldte-sidemeny",
     "version": "6.0.14",
+    "type": "module",
     "repository": {
         "type": "git",
         "url": "https://github.com/navikt/dinesykmeldte-sidemeny.git"
@@ -8,12 +9,12 @@
     "files": [
         "dist"
     ],
-    "module": "./dist/dinesykmeldte-sidemeny.mjs",
+    "module": "./dist/dinesykmeldte-sidemeny.js",
     "types": "./dist/lib/main.d.ts",
     "style": "./dist/style.css",
     "exports": {
         ".": {
-            "import": "./dist/dinesykmeldte-sidemeny.mjs"
+            "import": "./dist/dinesykmeldte-sidemeny.js"
         },
         "./dist/style.css": {
             "import": "./dist/style.css"
@@ -41,9 +42,9 @@
         "eslint": "^8.55.0",
         "jsdom": "^22.1.0",
         "typescript": "^5.3.3",
-        "vite": "^4.5.1",
+        "vite": "^5.0.7",
         "vite-plugin-dts": "^3.6.4",
-        "vitest": "^0.34.6"
+        "vitest": "^1.0.4"
     },
     "eslintConfig": {
         "extends": "@navikt/eslint-config-teamsykmelding"
