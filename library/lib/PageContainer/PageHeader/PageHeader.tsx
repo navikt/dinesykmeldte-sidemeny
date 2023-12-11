@@ -10,22 +10,16 @@ export type HeaderTitle = {
     title: string
     subtitle?: ReactNode
     subtitleSkeleton?: boolean
+    ariaLabelledby?: string
 }
 
 interface Props {
     header: HeaderTitle | false
     headerRight?: ReactNode
     hideHeaderOnMobile?: boolean
-    ariaLabelledby?: string
 }
 
-function PageHeader({
-    header,
-    headerRight,
-    hideHeaderOnMobile,
-    children,
-    ariaLabelledby,
-}: PropsWithChildren<Props>): JSX.Element {
+function PageHeader({ header, headerRight, hideHeaderOnMobile, children }: PropsWithChildren<Props>): JSX.Element {
     return (
         <>
             {typeof header === 'object' && (
@@ -36,12 +30,16 @@ function PageHeader({
                 >
                     <section
                         className={cn(styles.wrapper)}
-                        aria-labelledby={ariaLabelledby ? ariaLabelledby : 'page-header'}
+                        aria-labelledby={header.ariaLabelledby ? header.ariaLabelledby : 'page-header'}
                     >
                         <div className={styles.heading}>
                             {header.Icon && <header.Icon role="img" aria-hidden />}
                             <div>
-                                <Heading id={ariaLabelledby ? ariaLabelledby : 'page-header'} level="1" size="xlarge">
+                                <Heading
+                                    id={header.ariaLabelledby ? header.ariaLabelledby : 'page-header'}
+                                    level="1"
+                                    size="xlarge"
+                                >
                                     {header.title}
                                 </Heading>
                                 {header.subtitle && (
