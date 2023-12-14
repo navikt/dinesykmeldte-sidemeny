@@ -39,7 +39,7 @@ export const PageContainer = ({
         <PageHeader header={header} headerRight={headerRight} hideHeaderOnMobile={!!navigation}>
             {navigation && sykmeldt ? (
                 <ExpandableMobileMenu
-                    sykmeldtNavn={sykmeldt.navn}
+                    headerTitle={header ? header.title : sykmeldt.navn}
                     sykmeldtFnr={sykmeldt.fnr}
                     className={styles.mobileMenuAccordion}
                 >

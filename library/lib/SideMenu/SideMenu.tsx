@@ -17,8 +17,8 @@ export interface SideMenuProps {
 export function SideMenu({ sykmeldtName, sykmeldtId, activePage, routes }: SideMenuProps): JSX.Element {
     return (
         <nav aria-labelledby="side-menu-header" className={styles.navRoot}>
-            <Heading id="side-menu-header" size="small" className={styles.heading}>
-                {formatFirstNamePossessive(sykmeldtName, 'oversikt')}
+            <Heading id="side-menu-header" level="2" size="small" className={styles.heading}>
+                {formatFirstNamePossessive(sykmeldtName, 'sideoversikt')}
             </Heading>
             <ul className={styles.buttonList}>
                 <MenuItem
