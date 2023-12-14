@@ -8,13 +8,13 @@ import { addSpaceAfterEverySixthCharacter } from '../../utils/stringUtils'
 import styles from './ExpandableMobileMenu.module.css'
 
 interface Props {
-    sykmeldtNavn: string
+    headerTitle: string
     sykmeldtFnr: string
     className?: string
 }
 
 export const ExpandableMobileMenu = ({
-    sykmeldtNavn,
+    headerTitle,
     sykmeldtFnr,
     children,
     className,
@@ -24,10 +24,10 @@ export const ExpandableMobileMenu = ({
             <Accordion.Item>
                 <Accordion.Header id={`sykmeldt-accordion-header-${sykmeldtFnr}`}>
                     <div className={styles.accordionHeaderContent}>
-                        <PersonIcon className={styles.peopleIcon} />
+                        <PersonIcon className={styles.peopleIcon} aria-hidden />
                         <div>
-                            <Heading className={styles.heading} size="xlarge" level="3">
-                                {sykmeldtNavn}
+                            <Heading className={styles.heading} level="1" size="xlarge">
+                                {headerTitle}
                             </Heading>
                             <BodyShort>{addSpaceAfterEverySixthCharacter(sykmeldtFnr)}</BodyShort>
                         </div>
