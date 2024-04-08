@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { Heading } from '@navikt/ds-react'
 
 import { Pages, RootPages, Routes } from '../types'
@@ -14,7 +14,7 @@ export interface SideMenuProps {
     routes: Routes
 }
 
-export function SideMenu({ sykmeldtName, sykmeldtId, activePage, routes }: SideMenuProps): JSX.Element {
+export function SideMenu({ sykmeldtName, sykmeldtId, activePage, routes }: SideMenuProps): ReactElement {
     return (
         <nav aria-labelledby="side-menu-header" className={styles.navRoot}>
             <Heading id="side-menu-header" level="2" size="small" className={styles.heading}>

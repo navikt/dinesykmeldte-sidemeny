@@ -1,6 +1,6 @@
-import React from 'react'
+import { ReactElement } from 'react'
 
-function Route(): JSX.Element {
+function Route(): ReactElement {
     return <div>some route</div>
 }
 
