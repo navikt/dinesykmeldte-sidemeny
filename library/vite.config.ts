@@ -30,6 +30,7 @@ export default defineConfig({
         dts({
             tsconfigPath: './tsconfig.json',
             include: './lib',
+            exclude: ['**/*.test.*'],
         }),
     ],
 })
