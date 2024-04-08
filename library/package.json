@@ -27,9 +27,9 @@
         "lint": "eslint lib"
     },
     "peerDependencies": {
-        "@navikt/aksel-icons": "^4.x",
-        "@navikt/ds-react": "^4.x",
-        "clsx": "^1.x",
+        "@navikt/aksel-icons": "^6.x",
+        "@navikt/ds-react": "^6.x",
+        "clsx": "^2.x",
         "react": "18",
         "react-dom": "18"
     },

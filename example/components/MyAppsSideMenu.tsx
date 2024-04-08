@@ -1,4 +1,4 @@
-import React from 'react'
+import { ReactElement } from 'react'
 import Link from 'next/link'
 import { SideMenu, Pages, ChildPages, RootPages } from '@navikt/dinesykmeldte-sidemeny'
 
@@ -6,7 +6,7 @@ interface Props {
     value: string
 }
 
-function MyAppsSideMenu({ value }: Props): JSX.Element {
+function MyAppsSideMenu({ value }: Props): ReactElement {
     return (
         <SideMenu
             sykmeldtName="Jon Kåre"
