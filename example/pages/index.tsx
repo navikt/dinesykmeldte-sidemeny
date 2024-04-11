@@ -32,6 +32,7 @@ const Home: NextPage = () => {
                     </div>
                 )
             }
+            footer={<div>Foooooooooooter</div>}
             sykmeldt={{
                 navn: 'Test N. Testson',
                 fnr: '123456789',

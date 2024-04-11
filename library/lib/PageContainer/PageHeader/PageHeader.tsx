@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, ReactNode } from 'react'
+import React, { ReactElement, ReactNode } from 'react'
 import { Skeleton, BodyShort, Heading } from '@navikt/ds-react'
 import { BandageIcon } from '@navikt/aksel-icons'
 import cn from 'clsx'
@@ -13,41 +13,34 @@ export type HeaderTitle = {
 }
 
 interface Props {
-    header: HeaderTitle | false
+    header: HeaderTitle
     headerRight?: ReactNode
     hideHeaderOnMobile?: boolean
 }
 
-function PageHeader({ header, headerRight, hideHeaderOnMobile, children }: PropsWithChildren<Props>): JSX.Element {
+function PageHeader({ header, headerRight, hideHeaderOnMobile }: Props): ReactElement {
     return (
-        <>
-            {typeof header === 'object' && (
-                <div
-                    className={cn('dinesykmeldte-sidemeny__header', styles.headerRoot, {
-                        [styles.hideHeaderOnMobile]: hideHeaderOnMobile,
-                    })}
-                >
-                    <section className={cn(styles.wrapper)} aria-labelledby="page-header">
-                        <div className={styles.heading}>
-                            {header.Icon && <header.Icon role="img" aria-hidden />}
-                            <div>
-                                <Heading id="page-header" level="1" size="xlarge">
-                                    {header.title}
-                                </Heading>
-                                {header.subtitle && (
-                                    <BodyShort className={styles.subtitle}>{header.subtitle}</BodyShort>
-                                )}
-                                {!header.subtitle && header.subtitleSkeleton && (
-                                    <Skeleton variant="text" width="100%" height="var(--a-font-size-heading-xlarge)" />
-                                )}
-                            </div>
-                        </div>
-                        {headerRight && <div className={styles.headerExtra}>{headerRight}</div>}
-                    </section>
+        <div
+            className={cn('dinesykmeldte-sidemeny__header', styles.headerRoot, {
+                [styles.hideHeaderOnMobile]: hideHeaderOnMobile,
+            })}
+        >
+            <section className={cn(styles.wrapper)} aria-labelledby="page-header">
+                <div className={styles.heading}>
+                    {header.Icon && <header.Icon role="img" aria-hidden />}
+                    <div>
+                        <Heading id="page-header" level="1" size="xlarge">
+                            {header.title}
+                        </Heading>
+                        {header.subtitle && <BodyShort className={styles.subtitle}>{header.subtitle}</BodyShort>}
+                        {!header.subtitle && header.subtitleSkeleton && (
+                            <Skeleton variant="text" width="100%" height="var(--a-font-size-heading-xlarge)" />
+                        )}
+                    </div>
                 </div>
-            )}
-            {children}
-        </>
+                {headerRight && <div className={styles.headerExtra}>{headerRight}</div>}
+            </section>
+        </div>
     )
 }
 
