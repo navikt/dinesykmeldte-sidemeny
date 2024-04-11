@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, ReactElement, ReactNode } from 'react'
-import cn from 'clsx'
+import { Page } from '@navikt/ds-react'
 
 import { ExpandableMobileMenu } from '../SideMenu/ExpandableMobileMenu/ExpandableMobileMenu'
 
@@ -8,8 +8,9 @@ import styles from './PageContainer.module.css'
 
 type PageContainerProps = {
     /* You can opt out of the header by explicitly setting it to false. This will be removed in the future. */
-    header: HeaderTitle | false
+    header: HeaderTitle
     headerRight?: ReactNode
+    footer?: ReactNode
     className?: string
 } & SykmeldtNavigation
 
@@ -30,34 +31,38 @@ type SykmeldtNavigation =
 export const PageContainer = ({
     header,
     headerRight,
+    footer,
     sykmeldt,
     navigation,
     children,
     className,
 }: PropsWithChildren<PageContainerProps>): ReactElement => {
     return (
-        <PageHeader header={header} headerRight={headerRight} hideHeaderOnMobile={!!navigation}>
+        <Page
+            className={className}
+            footer={
+                footer ? (
+                    <Page.Block gutters width="xl" className={styles.pageContent}>
+                        <section className={styles.content}>{footer}</section>
+                    </Page.Block>
+                ) : undefined
+            }
+            footerPosition="belowFold"
+        >
+            <PageHeader header={header} headerRight={headerRight} hideHeaderOnMobile={!!navigation} />
             {navigation && sykmeldt ? (
                 <ExpandableMobileMenu
                     headerTitle={header ? header.title : sykmeldt.navn}
                     sykmeldtFnr={sykmeldt.fnr}
-                    className={styles.mobileMenuAccordion}
+                    className={styles.mobileTopMenu}
                 >
                     {navigation}
                 </ExpandableMobileMenu>
             ) : null}
-
-            <div className={cn(styles.rootContainer, className)}>
-                <div className={styles.content}>
-                    {navigation ? (
-                        <div className={styles.desktopMenuContainer}>{navigation}</div>
-                    ) : (
-                        <div className={styles.sideMenuFiller} />
-                    )}
-                    <section className={styles.pageContainer}>{children}</section>
-                    <div className={styles.sideMenuFiller} />
-                </div>
-            </div>
-        </PageHeader>
+            <Page.Block width="xl" gutters className={styles.pageContent}>
+                {navigation && <div className={styles.menuSidebar}>{navigation}</div>}
+                <section className={styles.content}>{children}</section>
+            </Page.Block>
+        </Page>
     )
 }

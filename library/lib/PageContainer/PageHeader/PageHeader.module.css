@@ -45,7 +45,7 @@
     }
 }
 
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 767px) {
     .headerRoot.hideHeaderOnMobile {
         display: none;
     }
