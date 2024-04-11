@@ -10,7 +10,7 @@
         "dist"
     ],
     "module": "./dist/dinesykmeldte-sidemeny.js",
-    "types": "./dist/lib/main.d.ts",
+    "types": "./dist/main.d.ts",
     "style": "./dist/style.css",
     "exports": {
         ".": {
