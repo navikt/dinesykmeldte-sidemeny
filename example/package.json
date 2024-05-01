@@ -20,7 +20,7 @@
         "react-dom": "18.2.0"
     },
     "devDependencies": {
-        "@navikt/eslint-config-teamsykmelding": "^5.2.0",
+        "@navikt/eslint-config-teamsykmelding": "^6.2.0",
         "@types/node": "20.12.5",
         "@types/react": "18.2.74",
         "@types/react-dom": "18.2.24",
