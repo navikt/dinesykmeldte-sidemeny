@@ -667,7 +667,7 @@ __metadata:
     jsdom: "npm:^24.1.1"
     typescript: "npm:^5.5.4"
     vite: "npm:^5.4.0"
-    vite-plugin-dts: "npm:^4.0.2"
+    vite-plugin-dts: "npm:^4.1.0"
     vitest: "npm:^2.0.5"
   peerDependencies:
     "@navikt/aksel-icons": ^6.x
@@ -6665,9 +6665,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-dts@npm:^4.0.2":
-  version: 4.0.2
-  resolution: "vite-plugin-dts@npm:4.0.2"
+"vite-plugin-dts@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "vite-plugin-dts@npm:4.1.0"
   dependencies:
     "@microsoft/api-extractor": "npm:7.47.4"
     "@rollup/pluginutils": "npm:^5.1.0"
@@ -6685,7 +6685,7 @@ __metadata:
   peerDependenciesMeta:
     vite:
       optional: true
-  checksum: 10/7028ee320d4e743317d244c553524a3dbfbf871651ad59368a6a5fba71ff4778548ce109fa5348500ff7d55c6b64570cfe14207489bad9ba9ef04948d62fe40d
+  checksum: 10/ed45effa2ea28cedfdd707c52649ca3b7a3d6e4757187cbd6dbd1d748b0ead9146e7b86dba1c55e9bf835af1b496ebd0c64365de9eeaa5fc95f67a25cdcc4003
   languageName: node
   linkType: hard
 
