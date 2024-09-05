@@ -1,13 +1,13 @@
 import React, { ReactElement } from 'react'
 import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from 'next/document'
-import { DecoratorComponents, fetchDecoratorReact } from '@navikt/nav-dekoratoren-moduler/ssr'
+import { DecoratorComponentsReact, fetchDecoratorReact } from '@navikt/nav-dekoratoren-moduler/ssr'
 
 const getDocumentParameter = (initialProps: DocumentInitialProps, name: string): string => {
     return initialProps.head?.find((element) => element?.props?.name === name)?.props?.content
 }
 
 interface Props {
-    Decorator: DecoratorComponents
+    Decorator: DecoratorComponentsReact
     language: string
 }
 
@@ -33,7 +33,7 @@ class MyDocument extends Document<Props> {
         return (
             <Html lang={language || 'no'}>
                 <Head>
-                    <Decorator.Styles />
+                    <Decorator.HeadAssets />
                 </Head>
                 <body>
                     <Decorator.Header />
