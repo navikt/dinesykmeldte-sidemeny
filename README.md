@@ -40,7 +40,7 @@ interface Props {
     aktivePage: Pages;
 }
 
-function MyAppsSideMenu({ sykmeldt }: Props): JSX.Element {
+function MyAppsSideMenu({ sykmeldt }: Props): ReactElement {
     return (
         <SideMenu
             sykmeldtName={sykmeldt.navn}

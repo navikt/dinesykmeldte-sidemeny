@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { ArrowLeftIcon, BandageIcon } from '@navikt/aksel-icons'
 
 import { NotifcationDot } from '../../NotificationDot/NotificationDot'
@@ -9,7 +9,7 @@ interface Props {
     notifications: number
 }
 
-function DynamicIcon({ Icon, childActive, notifications }: Props): JSX.Element {
+function DynamicIcon({ Icon, childActive, notifications }: Props): ReactElement {
     if (childActive) {
         return <ArrowLeftIcon role="img" aria-hidden />
     } else if (notifications > 0) {

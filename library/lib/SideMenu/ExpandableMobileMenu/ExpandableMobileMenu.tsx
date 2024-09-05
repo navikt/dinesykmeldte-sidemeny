@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react'
+import React, { PropsWithChildren, ReactElement } from 'react'
 import { Accordion, BodyShort, Heading } from '@navikt/ds-react'
 import { PersonIcon } from '@navikt/aksel-icons'
 import cn from 'clsx'
@@ -18,7 +18,7 @@ export const ExpandableMobileMenu = ({
     sykmeldtFnr,
     children,
     className,
-}: PropsWithChildren<Props>): JSX.Element => {
+}: PropsWithChildren<Props>): ReactElement => {
     return (
         <Accordion className={cn(styles.accordionMobileRoot, className)}>
             <Accordion.Item>

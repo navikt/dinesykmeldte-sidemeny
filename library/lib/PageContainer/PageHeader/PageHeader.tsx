@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, ReactNode } from 'react'
+import React, { PropsWithChildren, ReactElement, ReactNode } from 'react'
 import { Skeleton, BodyShort, Heading } from '@navikt/ds-react'
 import { BandageIcon } from '@navikt/aksel-icons'
 import cn from 'clsx'
@@ -18,7 +18,7 @@ interface Props {
     hideHeaderOnMobile?: boolean
 }
 
-function PageHeader({ header, headerRight, hideHeaderOnMobile, children }: PropsWithChildren<Props>): JSX.Element {
+function PageHeader({ header, headerRight, hideHeaderOnMobile, children }: PropsWithChildren<Props>): ReactElement {
     return (
         <>
             {typeof header === 'object' && (

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { Button } from '@navikt/ds-react'
 import cn from 'clsx'
 
@@ -16,7 +16,7 @@ interface Props {
     route: RouteVariant
 }
 
-function MenuItem({ sykmeldtId, page, activePage, route }: Props): JSX.Element | null {
+function MenuItem({ sykmeldtId, page, activePage, route }: Props): ReactElement | null {
     // Hide if route is sett to false
     if (typeof route === 'boolean') return null
     // Also hide if custom route with hidden true

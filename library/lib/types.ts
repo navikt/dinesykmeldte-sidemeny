@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren, ReactElement } from 'react'
 
 export enum RootPages {
     Sykmeldinger = 'Sykmeldinger',
@@ -19,7 +19,7 @@ export enum ChildPages {
 
 export type Pages = RootPages | ChildPages
 
-export type Route = (props: PropsWithChildren<{ className?: string }>) => JSX.Element
+export type Route = (props: PropsWithChildren<{ className?: string }>) => ReactElement
 
 export type RouteVariant =
     | number
