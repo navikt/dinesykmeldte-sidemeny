@@ -1,13 +1,13 @@
 import cn from 'clsx'
 import { Label } from '@navikt/ds-react'
-import React from 'react'
+import React, { ReactElement } from 'react'
 
 import { ChildPages } from '../../types'
 
 import { pageToIcon } from './MenuItemUtils'
 import styles from './SubMenuItem.module.css'
 
-export function SubMenuItem({ page }: { page: ChildPages }): JSX.Element {
+export function SubMenuItem({ page }: { page: ChildPages }): ReactElement {
     const Icon = pageToIcon(page)
 
     return (
