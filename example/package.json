@@ -13,7 +13,7 @@
         "@navikt/dinesykmeldte-sidemeny": "workspace:*",
         "@navikt/ds-css": "^6.16.3",
         "@navikt/ds-react": "^6.16.3",
-        "@navikt/nav-dekoratoren-moduler": "^3.0.0",
+        "@navikt/nav-dekoratoren-moduler": "^3.1.0",
         "clsx": "2.1.1",
         "next": "14.2.10",
         "react": "18.3.1",
