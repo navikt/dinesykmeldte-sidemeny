@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import '@navikt/dinesykmeldte-sidemeny/dist/style.css'
+import '@navikt/dinesykmeldte-sidemeny/dist/dinesykmeldte-sidemeny.css'
 
 import type { AppProps } from 'next/app'
 import { ReactElement, useEffect } from 'react'
