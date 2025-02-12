@@ -18,9 +18,9 @@
     "devDependencies": {
         "eslint": "^8.57.1",
         "husky": "^9.1.7",
-        "lint-staged": "^15.3.0",
-        "node-gyp": "^11.0.0",
-        "prettier": "^3.3.3"
+        "lint-staged": "^15.4.3",
+        "node-gyp": "^11.1.0",
+        "prettier": "^3.5.0"
     },
     "prettier": "@navikt/eslint-config-teamsykmelding/prettier",
     "resolutions": {
