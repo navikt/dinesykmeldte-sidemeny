@@ -14,7 +14,10 @@
     "style": "./dist/dinesykmeldte-sidemeny.css",
     "exports": {
         ".": {
-            "import": "./dist/dinesykmeldte-sidemeny.js"
+            "import": {
+                "types": "./dist/main.d.ts",
+                "default": "./dist/dinesykmeldte-sidemeny.js"
+            }
         },
         "./dist/dinesykmeldte-sidemeny.css": {
             "import": "./dist/dinesykmeldte-sidemeny.css"
