@@ -27,7 +27,7 @@ jobs:
         run: yarn build
         working-directory: ./example
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./example/out
 
