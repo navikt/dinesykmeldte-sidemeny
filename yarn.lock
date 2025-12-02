@@ -3237,7 +3237,7 @@ __metadata:
     husky: "npm:^9.1.7"
     lint-staged: "npm:^15.4.3"
     node-gyp: "npm:^11.1.0"
-    prettier: "npm:^3.5.0"
+    prettier: "npm:^3.6.2"
   languageName: unknown
   linkType: soft
 
@@ -6605,12 +6605,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.5.0":
-  version: 3.5.0
-  resolution: "prettier@npm:3.5.0"
+"prettier@npm:^3.6.2":
+  version: 3.7.3
+  resolution: "prettier@npm:3.7.3"
   bin:
     prettier: bin/prettier.cjs
-  checksum: 10/fc26c74bd317282f2a49ffe3ac0ffa79adbe6b2d7a1cdcadd96acf7fec77d3fa45b15f3728c1a2f281f4beccb35d97207187452a581d4919d18b460d0c37e480
+  checksum: 10/f83ca7e3c69717c1e2f7a95af2d9700eea520c235dfc0f94727a550a4bf0f14eda956a9b2682991b4f1da4605247b3cd3c5547bf2ada4a3ca718bc9ca230040a
   languageName: node
   linkType: hard
 
