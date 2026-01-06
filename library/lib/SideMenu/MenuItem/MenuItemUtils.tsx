@@ -43,7 +43,7 @@ export function parentToChild(page: RootPages): ChildPages {
     }
 }
 
-export function pageToUrl(activePage: Pages, page: RootPages, sykmeldtId: string): string {
+export function pageToUrl(page: RootPages, sykmeldtId: string): string {
     switch (page) {
         case RootPages.DineSykmeldte:
             return '/arbeidsgiver/sykmeldte'
@@ -79,23 +79,5 @@ export function pageToIcon(page: Pages): typeof BandageIcon {
         case RootPages.Sykmeldinger:
         case ChildPages.Sykmelding:
             return BandageIcon
-    }
-}
-
-function isDineSykmeldte(activePage: Pages): boolean {
-    switch (activePage) {
-        case RootPages.Sykmeldinger:
-        case ChildPages.Sykmelding:
-        case RootPages.Soknader:
-        case ChildPages.Soknad:
-        case RootPages.Meldinger:
-        case ChildPages.Melding:
-        case RootPages.DineSykmeldte:
-            return true
-        case RootPages.Dialogmoter:
-        case RootPages.Oppfolgingsplaner:
-        case ChildPages.Dialogmote:
-        case ChildPages.Oppfolgingsplan:
-            return false
     }
 }
