@@ -54,17 +54,9 @@ export function pageToUrl(activePage: Pages, page: RootPages, sykmeldtId: string
         case RootPages.Meldinger:
             return `/arbeidsgiver/sykmeldte/sykmeldt/${sykmeldtId}/meldinger`
         case RootPages.Dialogmoter:
-            if (isDineSykmeldte(activePage)) {
-                return `/arbeidsgiver/sykmeldte/dialogmoter/${sykmeldtId}`
-            } else {
-                return `/syk/dialogmoter/arbeidsgiver/${sykmeldtId}`
-            }
+            return `/syk/dialogmoter/arbeidsgiver/${sykmeldtId}`
         case RootPages.Oppfolgingsplaner:
-            if (isDineSykmeldte(activePage)) {
-                return `/arbeidsgiver/sykmeldte/oppfolgingsplaner/${sykmeldtId}`
-            } else {
-                return `/syk/oppfolgingsplaner/arbeidsgiver/${sykmeldtId}`
-            }
+            return `/syk/oppfolgingsplaner/arbeidsgiver/${sykmeldtId}`
     }
 }
 
