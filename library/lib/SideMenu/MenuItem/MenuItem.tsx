@@ -35,7 +35,7 @@ function MenuItem({ sykmeldtId, page, activePage, route }: Props): ReactElement 
                             [styles.activeItem]: activePage === page,
                             [styles.notifyingItem]: notifications > 0,
                         })}
-                        href={pageToUrl(activePage, page, sykmeldtId)}
+                        href={pageToUrl(page, sykmeldtId)}
                         as="a"
                         variant="tertiary"
                         size="small"

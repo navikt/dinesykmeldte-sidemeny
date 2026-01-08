@@ -26,8 +26,10 @@ jobs:
       - name: Build with Next.js
         run: yarn build
         working-directory: ./example
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./example/out
 
@@ -40,4 +42,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
