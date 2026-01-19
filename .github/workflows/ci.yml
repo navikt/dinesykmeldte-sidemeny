@@ -1,10 +1,12 @@
 name: CI
 
-on: push
+on:
+  pull_request:
+  push:
+    branches-ignore: ['main']
 
 permissions:
-  packages: write
-  contents: write
+  contents: read
 
 jobs:
   build:
