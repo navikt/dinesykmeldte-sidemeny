@@ -2,6 +2,12 @@
 
 Dette er et react bibliotek for sidemenyen som brukes på appene Dine Sykmeldte, Dialogmøter og Oppfølgingsplaner.
 
+## Krav
+
+- Node.js `>=22`
+- Aksel v8 (`@navikt/ds-react@^8`, `@navikt/aksel-icons@^8`)
+- Konsument må selv laste Aksel CSS (typisk `@navikt/ds-css`) i appen sin
+
 ## Bruk
 
 Biblioteket består hovedsaklig av to komponenter. `<PageContainer />` og `<SideMenu />`.
@@ -37,10 +43,10 @@ interface Props {
     // Hentes i din app, inneholder informasjon om notifications og sånt
     sykmeldt: DinSykmeldte;
     // Aktiv side, hentes fra din router
-    aktivePage: Pages;
+    activePage: Pages;
 }
 
-function MyAppsSideMenu({ sykmeldt }: Props): ReactElement {
+function MyAppsSideMenu({ sykmeldt, activePage }: Props): ReactElement {
     return (
         <SideMenu
             sykmeldtName={sykmeldt.navn}
@@ -55,7 +61,7 @@ function MyAppsSideMenu({ sykmeldt }: Props): ReactElement {
                 Dialogmoter: {
                     notifications: sykmeldt.ulesteDialogmoter,
                     internalRoute: ({ children, ...rest }) => (
-                        <Link href="/some/route" passHref>
+                        <Link href="/some/route" passHref legacyBehavior>
                             <a {...rest}>{children}</a>
                         </Link>
                     ),
@@ -63,7 +69,7 @@ function MyAppsSideMenu({ sykmeldt }: Props): ReactElement {
                 Oppfolgingsplaner: {
                     notifications: sykmeldt.ulesteOppfolgingsplaner,
                     internalRoute: ({ children, ...rest }) => (
-                        <Link href="/some-other/route" passHref>
+                        <Link href="/some-other/route" passHref legacyBehavior>
                             <a {...rest}>{children}</a>
                         </Link>
                     ),
@@ -93,6 +99,8 @@ Dette repoet består av to workspaces, ett for selve biblioteket og ett for et n
 
 Dette repoet avhenger av moduler på Github Package Repository. Sett en miljøvariabel som heter `NPM_AUTH_TOKEN` med en PAT token som har `package:read` for å kunne installere avhengighetene.
 
+Tips: På maskiner uten global Yarn, kjør via Corepack: `corepack yarn ...`.
+
 Start begge i dev modus ved å (fra root) kjør:
 
 1.  `yarn`
@@ -100,4 +108,12 @@ Start begge i dev modus ved å (fra root) kjør:
 
 ## Publishing
 
-Nye versjoner releases automatisk til GCR ved hvert bygg på `main`-branchen. Dersom man ønsker et større versjons-hopp enn bare en minor, så kan man manuelt committe en versjonsendring til main.
+Repoet bruker Changesets for semver og publishing.
+
+Kort oppsummert:
+
+1. I en PR: legg til en changeset med `yarn changeset` og velg `patch`/`minor`/`major` for `@navikt/dinesykmeldte-sidemeny`.
+2. Når PR-en merges til `main`: CI oppdaterer/åpner en "Version Packages" PR.
+3. Når "Version Packages" PR-en merges: pakken publiseres til GitHub Packages.
+
+Hvis en endring ikke skal utløse release: kjør `yarn changeset add --empty`.

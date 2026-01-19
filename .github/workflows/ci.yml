@@ -1,0 +1,19 @@
+name: CI
+
+on: push
+
+permissions:
+  packages: write
+  contents: write
+
+jobs:
+  build:
+    if: "!contains(github.event.head_commit.message, '[pages]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: navikt/teamsykmelding-github-actions-workflows/actions/yarn-cached@main
+        with:
+          NPM_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
+      - run: yarn test
+      - run: yarn lint
+      - run: yarn build
