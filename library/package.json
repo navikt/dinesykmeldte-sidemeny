@@ -26,12 +26,13 @@
     "scripts": {
         "dev": "vite build --watch",
         "build": "vite build",
-        "test": "vitest",
+        "test": "vitest --run",
+        "test:watch": "vitest",
         "lint": "eslint lib"
     },
     "peerDependencies": {
-        "@navikt/aksel-icons": "^7.x",
-        "@navikt/ds-react": "^7.x",
+        "@navikt/aksel-icons": "^8.0.0",
+        "@navikt/ds-react": "^8.0.0",
         "clsx": "^2.x",
         "react": "19",
         "react-dom": "19"

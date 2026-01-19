@@ -52,18 +52,18 @@ function MenuItem({ sykmeldtId, page, activePage, route }: Props): ReactElement 
     return (
         <>
             <li className={styles.menuItem}>
-                <route.internalRoute
-                    className={cn('navds-button navds-button--tertiary navds-button--small', styles.menuItemButton, {
+                <Button
+                    className={cn(styles.menuItemButton, {
                         [styles.activeItem]: activePage === page,
                         [styles.notifyingItem]: route.notifications > 0,
                     })}
+                    as={route.internalRoute}
+                    variant="tertiary"
+                    size="small"
+                    icon={<DynamicIcon Icon={Icon} childActive={childPageActive} notifications={route.notifications} />}
                 >
-                    <span className="navds-button__icon">
-                        <DynamicIcon Icon={Icon} childActive={childPageActive} notifications={route.notifications} />
-                    </span>
-
-                    <span className="navds-label navds-label--small">{page}</span>
-                </route.internalRoute>
+                    {page}
+                </Button>
             </li>
             {childPageActive && <SubMenuItem page={parentToChild(page)} />}
         </>

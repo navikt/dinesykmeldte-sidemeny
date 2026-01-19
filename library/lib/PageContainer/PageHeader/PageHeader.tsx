@@ -38,7 +38,7 @@ function PageHeader({ header, headerRight, hideHeaderOnMobile, children }: Props
                                     <BodyShort className={styles.subtitle}>{header.subtitle}</BodyShort>
                                 )}
                                 {!header.subtitle && header.subtitleSkeleton && (
-                                    <Skeleton variant="text" width="100%" height="var(--a-font-size-heading-xlarge)" />
+                                    <Skeleton variant="text" width="100%" height="var(--ax-font-size-heading-xlarge)" />
                                 )}
                             </div>
                         </div>

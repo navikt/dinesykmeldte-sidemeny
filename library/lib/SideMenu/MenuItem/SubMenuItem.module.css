@@ -1,12 +1,12 @@
 .subMenuItem .activeSubItem {
     display: flex;
     align-items: center;
-    padding-left: var(--a-spacing-9);
-    background-color: var(--a-surface-action-subtle-hover);
+    padding-left: var(--ax-space-36);
+    background-color: var(--ax-bg-accent-moderate-pressed);
 }
 
 .subMenuItem .activeSubItem > svg {
-    margin-right: var(--a-spacing-2);
+    margin-right: var(--ax-space-8);
     width: 16px;
     height: 16px;
 }

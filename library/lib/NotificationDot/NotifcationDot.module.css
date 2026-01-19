@@ -1,12 +1,12 @@
 .notifcationDot {
     bottom: 0;
     right: 0;
-    width: var(--a-spacing-5);
-    height: var(--a-spacing-5);
-    font-size: var(--a-font-size-small);
+    width: var(--ax-space-20);
+    height: var(--ax-space-20);
+    font-size: var(--ax-font-size-small);
     color: white;
-    background-color: var(--a-orange-400);
-    border: 1px solid var(--a-orange-400);
+    background-color: var(--ax-warning-500);
+    border: 1px solid var(--ax-warning-500);
     display: flex;
     justify-content: center;
     align-items: center;
