@@ -12,7 +12,7 @@ export function SubMenuItem({ page }: { page: ChildPages }): ReactElement {
 
     return (
         <li className={styles.subMenuItem}>
-            <div className={cn('navds-button--small', styles.activeSubItem)}>
+            <div className={cn(styles.activeSubItem)}>
                 <Icon role="img" aria-hidden />
                 <Label size="small">{page}</Label>
             </div>

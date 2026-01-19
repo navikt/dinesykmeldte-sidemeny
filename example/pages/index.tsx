@@ -55,7 +55,7 @@ const Home: NextPage = () => {
                 <ToggleGroup.Item value="dialogmote">Dialogmøte</ToggleGroup.Item>
                 <ToggleGroup.Item value="oppfolgingsplan">Oppfolgingsplan</ToggleGroup.Item>
             </ToggleGroup>
-            <HGrid gap="6" columns={{ xs: 1 }}>
+            <HGrid gap="space-6" columns={{ xs: 1 }}>
                 {Array.from(new Array(25).keys()).map((index) => (
                     <Accordion key={index}>
                         <Accordion.Item>

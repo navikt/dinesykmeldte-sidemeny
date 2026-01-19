@@ -8,13 +8,10 @@
 }
 
 .toggleGroup {
-}
-
-.toggleGroup > :global(.navds-toggle-group) {
     display: flex;
     flex-wrap: wrap;
 }
 
-.toggleGroup > :global(.navds-toggle-group) > button {
+.toggleGroup button {
     flex: 1 0 15%;
 }
