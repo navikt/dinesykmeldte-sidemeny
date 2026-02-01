@@ -3691,10 +3691,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"csp-header@npm:^6.2.0":
-  version: 6.2.0
-  resolution: "csp-header@npm:6.2.0"
-  checksum: 10/9632068b35513741fa0085d37b27e873759b08366a58ff2946c046808b4fd9732ec5211c98052eeb1242e616254ae96616b1e598c53f4b29bf33f94d7a28f6df
+"csp-header@npm:^6.3.0":
+  version: 6.3.0
+  resolution: "csp-header@npm:6.3.0"
+  checksum: 10/eb88e40136f000d94b7321e135b2c5692fb33cddd02ba4144e01b0dba7d1c42ec399bbbfd2b2c6975e1f0201d1334482dbb3875c8a2dcefa7ac358550970752a
   languageName: node
   linkType: hard
 
@@ -3951,7 +3951,7 @@ __metadata:
     "@types/react": "npm:19.0.8"
     "@types/react-dom": "npm:19.0.3"
     clsx: "npm:2.1.1"
-    csp-header: "npm:^6.2.0"
+    csp-header: "npm:^6.3.0"
     eslint: "npm:^8.57.1"
     eslint-config-next: "npm:15.1.7"
     html-react-parser: "npm:^5.2.10"
