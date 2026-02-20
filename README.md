@@ -35,15 +35,15 @@ Denne er anbefalt å wrappe i en komponent spesfikk for appen din.
 **Eksempel med `next/link`:**
 
 ```tsx
-import React from 'react';
-import Link from 'next/link';
-import { SideMenu, Pages, ChildPages, RootPages } from '@navikt/dinesykmeldte-sidemeny';
+import React from 'react'
+import Link from 'next/link'
+import { SideMenu, Pages, ChildPages, RootPages } from '@navikt/dinesykmeldte-sidemeny'
 
 interface Props {
     // Hentes i din app, inneholder informasjon om notifications og sånt
-    sykmeldt: DinSykmeldte;
+    sykmeldt: DinSykmeldte
     // Aktiv side, hentes fra din router
-    activePage: Pages;
+    activePage: Pages
 }
 
 function MyAppsSideMenu({ sykmeldt, activePage }: Props): ReactElement {
@@ -77,10 +77,10 @@ function MyAppsSideMenu({ sykmeldt, activePage }: Props): ReactElement {
                 DineSykmeldte: 0,
             }}
         />
-    );
+    )
 }
 
-export default MyAppsSideMenu;
+export default MyAppsSideMenu
 ```
 
 Denne komponenten kan brukes sammen med `<PageContainer />` på alle sidene dine som skal ha sidemeny.
@@ -98,7 +98,6 @@ For et mer fullstendig eksempel kan man ta en titt på [pages/index.tsx](./examp
 Dette repoet består av to workspaces, ett for selve biblioteket og ett for et nextjs eksempelprosjekt.
 
 Dette repoet avhenger av moduler på Github Package Repository. Sett en miljøvariabel som heter `NPM_AUTH_TOKEN` med en PAT token som har `package:read` for å kunne installere avhengighetene.
-
 
 Med mise kan du kjøre samme flyt via tasks, f.eks. `mise run install` og `mise run dev`.
 
