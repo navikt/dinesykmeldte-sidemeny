@@ -2,7 +2,7 @@ name: Deploy example site to Pages
 
 on:
   push:
-    branches: ['main']
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -10,26 +10,26 @@ permissions:
   id-token: write
 
 concurrency:
-  group: 'pages'
+  group: "pages"
   cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: navikt/teamsykmelding-github-actions-workflows/actions/yarn-cached@main
+      - uses: navikt/teamesyfo-github-actions-workflows/actions/setup-pnpm@main
         with:
           NPM_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
       - name: Build library
-        run: yarn build
+        run: pnpm build
         working-directory: ./library
       - name: Build with Next.js
-        run: yarn build
+        run: pnpm build
         working-directory: ./example
       - name: Configure Pages
-        uses: actions/configure-pages@v5
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b
         with:
           path: ./example/out
 
@@ -42,4 +42,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e
