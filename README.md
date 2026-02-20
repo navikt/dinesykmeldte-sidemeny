@@ -99,7 +99,8 @@ Dette repoet består av to workspaces, ett for selve biblioteket og ett for et n
 
 Dette repoet avhenger av moduler på Github Package Repository. Sett en miljøvariabel som heter `NPM_AUTH_TOKEN` med en PAT token som har `package:read` for å kunne installere avhengighetene.
 
-Tips: På maskiner uten global pnpm, kjør via Corepack: `corepack pnpm ...`.
+
+Med mise kan du kjøre samme flyt via tasks, f.eks. `mise run install` og `mise run dev`.
 
 Start begge i dev modus ved å (fra root) kjør:
 
