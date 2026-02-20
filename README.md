@@ -99,12 +99,12 @@ Dette repoet består av to workspaces, ett for selve biblioteket og ett for et n
 
 Dette repoet avhenger av moduler på Github Package Repository. Sett en miljøvariabel som heter `NPM_AUTH_TOKEN` med en PAT token som har `package:read` for å kunne installere avhengighetene.
 
-Tips: På maskiner uten global Yarn, kjør via Corepack: `corepack yarn ...`.
+Tips: På maskiner uten global pnpm, kjør via Corepack: `corepack pnpm ...`.
 
 Start begge i dev modus ved å (fra root) kjør:
 
-1.  `yarn`
-2.  `yarn dev`
+1.  `pnpm install`
+2.  `pnpm dev`
 
 ## Publishing
 
@@ -112,8 +112,8 @@ Repoet bruker Changesets for semver og publishing.
 
 Kort oppsummert:
 
-1. I en PR: legg til en changeset med `yarn changeset` og velg `patch`/`minor`/`major` for `@navikt/dinesykmeldte-sidemeny`.
+1. I en PR: legg til en changeset med `pnpm changeset` og velg `patch`/`minor`/`major` for `@navikt/dinesykmeldte-sidemeny`.
 2. Når PR-en merges til `main`: CI oppdaterer/åpner en "Version Packages" PR.
 3. Når "Version Packages" PR-en merges: pakken publiseres til GitHub Packages.
 
-Hvis en endring ikke skal utløse release: kjør `yarn changeset add --empty`.
+Hvis en endring ikke skal utløse release: kjør `pnpm changeset add --empty`.
