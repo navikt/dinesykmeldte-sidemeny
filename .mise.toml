@@ -3,8 +3,10 @@ node = "24"
 pnpm = "10"
 
 [tasks.install]
-description = "Install dependencies"
+description = "Install dependencies (cached)"
 run = "pnpm install"
+sources = ["package.json", "pnpm-lock.yaml"]
+outputs = ["node_modules/.modules.yaml"]
 
 [tasks.dev]
 description = "Run library and example in dev mode"
