@@ -74,12 +74,6 @@ updates:
         patterns:
           - 'next'
           - '@next/bundle-analyzer'
-          - 'eslint-config-next'
-      code-style:
-        patterns:
-          - 'eslint'
-          - 'prettier'
-          - 'prettier-plugin-tailwindcss'
       testing:
         patterns:
           - 'vitest'
