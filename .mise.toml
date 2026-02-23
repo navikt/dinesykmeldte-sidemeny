@@ -8,20 +8,25 @@ run = "pnpm install"
 
 [tasks.dev]
 description = "Run library and example in dev mode"
+depends = ["install"]
 run = "pnpm dev"
 
 [tasks.lint]
 description = "Run lint for all workspaces"
+depends = ["install"]
 run = "pnpm lint"
 
 [tasks.test]
 description = "Run library tests"
+depends = ["install"]
 run = "pnpm test"
 
 [tasks.build]
 description = "Build library"
+depends = ["install"]
 run = "pnpm build"
 
-[tasks.release]
-description = "Publish with changesets"
-run = "pnpm release"
+
+[tasks.ci]
+description = "Full CI pipeline: lint, test and build"
+depends = ["lint","test","build"]
