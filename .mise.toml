@@ -18,6 +18,11 @@ description = "Run lint for all workspaces"
 depends = ["install"]
 run = "pnpm lint"
 
+[tasks.format]
+description = "Run format for all workspaces"
+depends = ["install"]
+run = "pnpm format"
+
 [tasks.test]
 description = "Run library tests"
 depends = ["install"]
@@ -27,7 +32,6 @@ run = "pnpm test"
 description = "Build library"
 depends = ["install"]
 run = "pnpm build"
-
 
 [tasks.ci]
 description = "Full CI pipeline: lint, test and build"
