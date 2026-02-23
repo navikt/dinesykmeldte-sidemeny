@@ -1648,17 +1648,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@navikt/nav-dekoratoren-moduler@npm:^3.2.2":
-  version: 3.2.2
-  resolution: "@navikt/nav-dekoratoren-moduler@npm:3.2.2::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40navikt%2Fnav-dekoratoren-moduler%2F3.2.2%2F75bf1d5df5211c8004befd47e840382398105403"
+"@navikt/nav-dekoratoren-moduler@npm:^3.6.2":
+  version: 3.6.2
+  resolution: "@navikt/nav-dekoratoren-moduler@npm:3.6.2::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40navikt%2Fnav-dekoratoren-moduler%2F3.6.2%2F70dac085c605d0299f03a122646aecefea764d30"
   dependencies:
-    js-cookie: "npm:^3.0.5"
+    js-cookie: "npm:3.0.5"
   peerDependencies:
     csp-header: ">=5.x"
     html-react-parser: ">=5.x"
     jsdom: ">=16.x"
     react: ">=17.x"
-  checksum: 10/9a77e5ba62416ab637d6b06f7de58c3274f10c990c834c40bea9d205ccf3d5d20262f3869892786658dce10c543eba8aa2a4c4bc0ff774f64d4c4ff9180b9199
+  checksum: 10/96cecc8f9fc3f2e76d9ba9e30b35189d4053823be8155c25ec701120ad824bb3264fa3be9faf92ac16675a83ff16fddf303b3bd632d0b6b9a10be9af38d1b63c
   languageName: node
   linkType: hard
 
@@ -3946,7 +3946,7 @@ __metadata:
     "@navikt/ds-css": "npm:^8.0.0"
     "@navikt/ds-react": "npm:^8.0.0"
     "@navikt/eslint-config-teamsykmelding": "npm:^7.1.0"
-    "@navikt/nav-dekoratoren-moduler": "npm:^3.2.2"
+    "@navikt/nav-dekoratoren-moduler": "npm:^3.6.2"
     "@types/node": "npm:22.13.1"
     "@types/react": "npm:19.0.8"
     "@types/react-dom": "npm:19.0.3"
@@ -6307,7 +6307,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"js-cookie@npm:^3.0.5":
+"js-cookie@npm:3.0.5":
   version: 3.0.5
   resolution: "js-cookie@npm:3.0.5"
   checksum: 10/366494b1630b9fb8abaef3659748db5dfd52c58c6fc3459b9f0a03b492593bc1b01c6dfcc066b46f6413c28edb3a00cc68fb61ea8cdf6991bedf1f100f8a389d
