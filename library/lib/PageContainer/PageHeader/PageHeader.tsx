@@ -1,11 +1,7 @@
 import type { BandageIcon } from "@navikt/aksel-icons";
 import { BodyShort, Heading, Skeleton } from "@navikt/ds-react";
 import cn from "clsx";
-import React, {
-  type PropsWithChildren,
-  type ReactElement,
-  type ReactNode,
-} from "react";
+import type { PropsWithChildren, ReactElement, ReactNode } from "react";
 
 import styles from "./PageHeader.module.css";
 

@@ -9,7 +9,7 @@ import {
 } from "@navikt/ds-react";
 import type { NextPage } from "next";
 import Head from "next/head";
-import React, { useState } from "react";
+import { useState } from "react";
 import MyAppsSideMenu from "../components/MyAppsSideMenu";
 import styles from "../styles/Home.module.css";
 

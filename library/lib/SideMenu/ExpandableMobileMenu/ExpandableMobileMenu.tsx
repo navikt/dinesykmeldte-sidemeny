@@ -1,7 +1,7 @@
 import { PersonIcon } from "@navikt/aksel-icons";
 import { Accordion, BodyShort, Heading } from "@navikt/ds-react";
 import cn from "clsx";
-import React, { type PropsWithChildren, type ReactElement } from "react";
+import type { PropsWithChildren, ReactElement } from "react";
 
 import { addSpaceAfterEverySixthCharacter } from "../../utils/stringUtils";
 

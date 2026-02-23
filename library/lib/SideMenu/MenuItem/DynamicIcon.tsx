@@ -1,5 +1,5 @@
 import { ArrowLeftIcon, type BandageIcon } from "@navikt/aksel-icons";
-import React, { type ReactElement } from "react";
+import type { ReactElement } from "react";
 
 import { NotifcationDot } from "../../NotificationDot/NotificationDot";
 

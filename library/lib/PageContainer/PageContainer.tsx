@@ -1,9 +1,5 @@
 import cn from "clsx";
-import React, {
-  type PropsWithChildren,
-  type ReactElement,
-  type ReactNode,
-} from "react";
+import type { PropsWithChildren, ReactElement, ReactNode } from "react";
 
 import { ExpandableMobileMenu } from "../SideMenu/ExpandableMobileMenu/ExpandableMobileMenu";
 import styles from "./PageContainer.module.css";

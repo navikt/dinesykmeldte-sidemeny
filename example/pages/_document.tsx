@@ -10,7 +10,7 @@ import Document, {
   Main,
   NextScript,
 } from "next/document";
-import React, { type ReactElement } from "react";
+import type { ReactElement } from "react";
 
 const getDocumentParameter = (
   initialProps: DocumentInitialProps,

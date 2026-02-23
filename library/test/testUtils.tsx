@@ -1,5 +1,5 @@
 import { type RenderOptions, render } from "@testing-library/react";
-import React, { type ReactElement } from "react";
+import type { ReactElement } from "react";
 
 function customRender(
   ui: ReactElement,

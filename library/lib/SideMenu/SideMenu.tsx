@@ -1,5 +1,5 @@
 import { Heading } from "@navikt/ds-react";
-import React, { type ReactElement } from "react";
+import type { ReactElement } from "react";
 
 import { type Pages, RootPages, type Routes } from "../types";
 import { formatFirstNamePossessive } from "../utils";

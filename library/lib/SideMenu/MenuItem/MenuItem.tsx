@@ -1,6 +1,6 @@
 import { Button } from "@navikt/ds-react";
 import cn from "clsx";
-import React, { type ReactElement } from "react";
+import type { ReactElement } from "react";
 
 import type { Pages, RootPages, RouteVariant } from "../../types";
 import DynamicIcon from "./DynamicIcon";
