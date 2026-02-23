@@ -4,7 +4,7 @@ Dette er et react bibliotek for sidemenyen som brukes på appene Dine Sykmeldte,
 
 ## Krav
 
-- Node.js `>=22`
+- Node.js `>=24`
 - Aksel v8 (`@navikt/ds-react@^8`, `@navikt/aksel-icons@^8`)
 - Konsument må selv laste Aksel CSS (typisk `@navikt/ds-css`) i appen sin
 
