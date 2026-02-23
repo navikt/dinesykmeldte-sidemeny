@@ -1,59 +1,59 @@
 {
-    "name": "@navikt/dinesykmeldte-sidemeny",
-    "version": "8.0.0",
-    "type": "module",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/navikt/dinesykmeldte-sidemeny.git"
+  "name": "@navikt/dinesykmeldte-sidemeny",
+  "version": "8.0.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/navikt/dinesykmeldte-sidemeny.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "module": "./dist/dinesykmeldte-sidemeny.js",
+  "types": "./dist/main.d.ts",
+  "style": "./dist/dinesykmeldte-sidemeny.css",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/main.d.ts",
+        "default": "./dist/dinesykmeldte-sidemeny.js"
+      }
     },
-    "files": [
-        "dist"
-    ],
-    "module": "./dist/dinesykmeldte-sidemeny.js",
-    "types": "./dist/main.d.ts",
-    "style": "./dist/dinesykmeldte-sidemeny.css",
-    "exports": {
-        ".": {
-            "import": {
-                "types": "./dist/main.d.ts",
-                "default": "./dist/dinesykmeldte-sidemeny.js"
-            }
-        },
-        "./dist/dinesykmeldte-sidemeny.css": {
-            "import": "./dist/dinesykmeldte-sidemeny.css"
-        }
-    },
-    "scripts": {
-        "dev": "vite build --watch",
-        "build": "vite build",
-        "test": "vitest --run",
-        "test:watch": "vitest",
-        "lint": "eslint lib"
-    },
-    "peerDependencies": {
-        "@navikt/aksel-icons": "^8.0.0",
-        "@navikt/ds-react": "^8.0.0",
-        "clsx": "^2.x",
-        "react": "19",
-        "react-dom": "19"
-    },
-    "devDependencies": {
-        "@testing-library/dom": "^10.4.1",
-        "@testing-library/jest-dom": "^6.9.1",
-        "@testing-library/react": "^16.2.0",
-        "@types/react": "^19.0.8",
-        "@types/react-dom": "^19.0.3",
-        "@vitejs/plugin-react": "^4.3.4",
-        "eslint": "^8.57.1",
-        "jsdom": "^26.0.0",
-        "react": "19.2.4",
-        "react-dom": "19.2.4",
-        "typescript": "^5.9.3",
-        "vite": "^7.2.4",
-        "vite-plugin-dts": "^4.5.4",
-        "vitest": "^3.0.5"
-    },
-    "eslintConfig": {
-        "extends": "@navikt/eslint-config-teamsykmelding"
+    "./dist/dinesykmeldte-sidemeny.css": {
+      "import": "./dist/dinesykmeldte-sidemeny.css"
     }
+  },
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "lint": "eslint lib"
+  },
+  "peerDependencies": {
+    "@navikt/aksel-icons": "^8.0.0",
+    "@navikt/ds-react": "^8.0.0",
+    "clsx": "^2.x",
+    "react": "19",
+    "react-dom": "19"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.2.0",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^8.57.1",
+    "jsdom": "^26.0.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.4",
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "^3.0.5"
+  },
+  "eslintConfig": {
+    "extends": "@navikt/eslint-config-teamsykmelding"
+  }
 }

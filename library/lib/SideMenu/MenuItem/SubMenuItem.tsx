@@ -1,23 +1,23 @@
-import cn from 'clsx'
-import { Label } from '@navikt/ds-react'
-import React, { ReactElement } from 'react'
+import { Label } from "@navikt/ds-react";
+import cn from "clsx";
+import React, { type ReactElement } from "react";
 
-import { ChildPages } from '../../types'
+import type { ChildPages } from "../../types";
 
-import { pageToIcon } from './MenuItemUtils'
-import styles from './SubMenuItem.module.css'
+import { pageToIcon } from "./MenuItemUtils";
+import styles from "./SubMenuItem.module.css";
 
 export function SubMenuItem({ page }: { page: ChildPages }): ReactElement {
-    const Icon = pageToIcon(page)
+  const Icon = pageToIcon(page);
 
-    return (
-        <li className={styles.subMenuItem}>
-            <div className={cn(styles.activeSubItem)}>
-                <Icon role="img" aria-hidden />
-                <Label size="small">{page}</Label>
-            </div>
-        </li>
-    )
+  return (
+    <li className={styles.subMenuItem}>
+      <div className={cn(styles.activeSubItem)}>
+        <Icon role="img" aria-hidden />
+        <Label size="small">{page}</Label>
+      </div>
+    </li>
+  );
 }
 
-export default SubMenuItem
+export default SubMenuItem;

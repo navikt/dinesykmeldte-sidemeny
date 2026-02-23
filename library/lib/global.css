@@ -1,7 +1,7 @@
 :root {
-    /* Will be set programatically by dekoratøren */
-    --decorator-sticky-offset: 0px;
-    /* Custom non design system color, requested by Bendik :) */
-    --warning-color-background: #fef9ef;
-    --page-container-content-width: 50rem;
+  /* Will be set programatically by dekoratøren */
+  --decorator-sticky-offset: 0px;
+  /* Custom non design system color, requested by Bendik :) */
+  --warning-color-background: #fef9ef;
+  --page-container-content-width: 50rem;
 }

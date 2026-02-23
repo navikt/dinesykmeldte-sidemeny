@@ -1,24 +1,24 @@
 .accordionMobileRoot {
-    margin-top: var(--ax-space-32);
+  margin-top: var(--ax-space-32);
 }
 
 .accordionHeaderContent {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .peopleIcon {
-    margin: var(--ax-space-8);
-    margin-right: var(--ax-space-16);
-    width: var(--ax-space-24);
-    height: var(--ax-space-24);
+  margin: var(--ax-space-8);
+  margin-right: var(--ax-space-16);
+  width: var(--ax-space-24);
+  height: var(--ax-space-24);
 }
 
 .accordionContent {
-    padding: var(--ax-space-16);
+  padding: var(--ax-space-16);
 }
 
 .heading {
-    font-size: var(--ax-font-size-heading-xlarge);
+  font-size: var(--ax-font-size-heading-xlarge);
 }

@@ -1,7 +1,7 @@
-import { ReactElement } from 'react'
+import type { ReactElement } from "react";
 
 function Route(): ReactElement {
-    return <div>some other route</div>
+  return <div>some other route</div>;
 }
 
-export default Route
+export default Route;

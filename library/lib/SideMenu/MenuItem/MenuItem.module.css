@@ -1,11 +1,11 @@
 .menuItem .notifyingItem {
-    background-color: var(--warning-color-background);
+  background-color: var(--warning-color-background);
 }
 
 .menuItem .activeItem {
-    background-color: var(--ax-bg-accent-moderate-pressed);
+  background-color: var(--ax-bg-accent-moderate-pressed);
 }
 
 .menuItem .menuItemButton {
-    justify-content: flex-start;
+  justify-content: flex-start;
 }
