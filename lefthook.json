@@ -1,0 +1,15 @@
+{
+    "pre-commit": {
+        "parallel": true,
+        "commands": {
+            "prettier": {
+                "glob": "*.{md,html,css,json,graphql,graphqls,yml,mdx,yaml}",
+                "run": "pnpm prettier --write {staged_files}"
+            },
+            "eslint": {
+                "glob": "*.{ts,tsx}",
+                "run": "pnpm eslint --fix --max-warnings=0 {staged_files}"
+            }
+        }
+    }
+}

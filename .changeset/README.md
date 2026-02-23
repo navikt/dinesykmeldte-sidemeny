@@ -6,7 +6,7 @@ This repo uses Changesets to manage semver versioning and publishing.
 
 1. Add a changeset in your PR:
 
-   `yarn changeset`
+   `pnpm changeset`
 
 2. Choose the bump type (patch/minor/major) for `@navikt/dinesykmeldte-sidemeny`.
 

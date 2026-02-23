@@ -4,7 +4,7 @@ Dette er et react bibliotek for sidemenyen som brukes på appene Dine Sykmeldte,
 
 ## Krav
 
-- Node.js `>=22`
+- Node.js `>=24`
 - Aksel v8 (`@navikt/ds-react@^8`, `@navikt/aksel-icons@^8`)
 - Konsument må selv laste Aksel CSS (typisk `@navikt/ds-css`) i appen sin
 
@@ -35,15 +35,15 @@ Denne er anbefalt å wrappe i en komponent spesfikk for appen din.
 **Eksempel med `next/link`:**
 
 ```tsx
-import React from 'react';
-import Link from 'next/link';
-import { SideMenu, Pages, ChildPages, RootPages } from '@navikt/dinesykmeldte-sidemeny';
+import React from 'react'
+import Link from 'next/link'
+import { SideMenu, Pages, ChildPages, RootPages } from '@navikt/dinesykmeldte-sidemeny'
 
 interface Props {
     // Hentes i din app, inneholder informasjon om notifications og sånt
-    sykmeldt: DinSykmeldte;
+    sykmeldt: DinSykmeldte
     // Aktiv side, hentes fra din router
-    activePage: Pages;
+    activePage: Pages
 }
 
 function MyAppsSideMenu({ sykmeldt, activePage }: Props): ReactElement {
@@ -77,10 +77,10 @@ function MyAppsSideMenu({ sykmeldt, activePage }: Props): ReactElement {
                 DineSykmeldte: 0,
             }}
         />
-    );
+    )
 }
 
-export default MyAppsSideMenu;
+export default MyAppsSideMenu
 ```
 
 Denne komponenten kan brukes sammen med `<PageContainer />` på alle sidene dine som skal ha sidemeny.
@@ -99,12 +99,12 @@ Dette repoet består av to workspaces, ett for selve biblioteket og ett for et n
 
 Dette repoet avhenger av moduler på Github Package Repository. Sett en miljøvariabel som heter `NPM_AUTH_TOKEN` med en PAT token som har `package:read` for å kunne installere avhengighetene.
 
-Tips: På maskiner uten global Yarn, kjør via Corepack: `corepack yarn ...`.
+Med mise kan du kjøre samme flyt via tasks, f.eks. `mise run install` og `mise run dev`.
 
 Start begge i dev modus ved å (fra root) kjør:
 
-1.  `yarn`
-2.  `yarn dev`
+1.  `pnpm install`
+2.  `pnpm dev`
 
 ## Publishing
 
@@ -112,8 +112,8 @@ Repoet bruker Changesets for semver og publishing.
 
 Kort oppsummert:
 
-1. I en PR: legg til en changeset med `yarn changeset` og velg `patch`/`minor`/`major` for `@navikt/dinesykmeldte-sidemeny`.
+1. I en PR: legg til en changeset med `pnpm changeset` og velg `patch`/`minor`/`major` for `@navikt/dinesykmeldte-sidemeny`.
 2. Når PR-en merges til `main`: CI oppdaterer/åpner en "Version Packages" PR.
 3. Når "Version Packages" PR-en merges: pakken publiseres til GitHub Packages.
 
-Hvis en endring ikke skal utløse release: kjør `yarn changeset add --empty`.
+Hvis en endring ikke skal utløse release: kjør `pnpm changeset add --empty`.
