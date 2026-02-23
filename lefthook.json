@@ -11,7 +11,7 @@
   "pre-push": {
     "commands": {
       "typecheck": {
-        "run": "pnpm exec tsc --noEmit"
+        "run": "pnpm -r exec tsc --noEmit"
       }
     }
   },
