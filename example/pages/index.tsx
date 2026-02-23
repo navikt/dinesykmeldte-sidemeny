@@ -80,8 +80,10 @@ const Home: NextPage = () => {
         ))}
       </HGrid>
       <div className={styles.extraFloatingButtons}>
-        <button onClick={() => setSideMenu((b) => !b)}>Hide menu</button>
-        <button onClick={() => setHeaderExtra((b) => !b)}>
+        <button type="button" onClick={() => setSideMenu((b) => !b)}>
+          Hide menu
+        </button>
+        <button type="button" onClick={() => setHeaderExtra((b) => !b)}>
           Hide header extra
         </button>
       </div>
