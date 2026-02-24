@@ -28,7 +28,7 @@
     "build": "vite build",
     "test": "vitest --run",
     "test:watch": "vitest",
-    "lint": "eslint lib"
+    "lint": "pnpm exec biome check ."
   },
   "peerDependencies": {
     "@navikt/aksel-icons": "^8.0.0",
@@ -44,7 +44,6 @@
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.4",
-    "eslint": "^8.57.1",
     "jsdom": "^26.0.0",
     "react": "19.2.4",
     "react-dom": "19.2.4",
@@ -52,8 +51,5 @@
     "vite": "^7.2.4",
     "vite-plugin-dts": "^4.5.4",
     "vitest": "^3.0.5"
-  },
-  "eslintConfig": {
-    "extends": "@navikt/eslint-config-teamsykmelding"
   }
 }
