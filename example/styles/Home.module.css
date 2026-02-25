@@ -1,17 +1,17 @@
 .extraFloatingButtons {
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
-    display: flex;
-    gap: 8px;
-    flex-direction: column;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
 }
 
 .toggleGroup {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .toggleGroup button {
-    flex: 1 0 15%;
+  flex: 1 0 15%;
 }
