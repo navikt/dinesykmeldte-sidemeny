@@ -14,25 +14,31 @@ depends = ["install"]
 run = "pnpm dev"
 
 [tasks.lint]
-description = "Run lint for all workspaces"
+description = "Run linter with fixing enabled"
 depends = ["install"]
-run = "pnpm lint"
+run = "pnpm run lint:fix"
 
 [tasks.format]
-description = "Run format for all workspaces"
+description = "Run formatter with fixing enabled"
 depends = ["install"]
-run = "pnpm format"
+run = "pnpm run format:fix"
+
+[tasks.check]
+description = "Run type checker with fixing enabled"
+depends = ["install"]
+run = "pnpm run check:fix"
 
 [tasks.test]
 description = "Run library tests"
 depends = ["install"]
-run = "pnpm test"
+run = "pnpm run test"
 
 [tasks.build]
 description = "Build library"
 depends = ["install"]
-run = "pnpm build"
+run = "pnpm run build"
 
-[tasks.ci]
-description = "Full CI pipeline: lint, test and build"
-depends = ["lint","test","build"]
+[tasks.verify]
+description = "Verify code quality, run tests and build"
+depends = ["install"]
+run = "mise run check && mise run test --no-watch && mise run build"
