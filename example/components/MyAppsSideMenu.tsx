@@ -17,6 +17,7 @@ function MyAppsSideMenu({ value }: Props): ReactElement {
       sykmeldtName="Jon Kåre"
       sykmeldtId="123456789"
       activePage={routeToEnum(value)}
+      stilling={{ tittel: "Lærer", prosent: 50 }}
       routes={{
         Soknader: 0,
         Sykmeldinger: 1,

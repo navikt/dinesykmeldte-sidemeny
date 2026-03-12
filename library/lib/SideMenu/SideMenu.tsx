@@ -1,7 +1,7 @@
-import { Heading } from "@navikt/ds-react";
+import { BodyShort, Heading } from "@navikt/ds-react";
 import type { ReactElement } from "react";
 
-import { type Pages, RootPages, type Routes } from "../types";
+import { type Pages, RootPages, type Routes, type Stilling } from "../types";
 import { formatFirstNamePossessive } from "../utils";
 
 import MenuItem from "./MenuItem/MenuItem";
@@ -12,6 +12,7 @@ export interface SideMenuProps {
   sykmeldtId: string;
   activePage: Pages;
   routes: Routes;
+  stilling?: Stilling;
 }
 
 export function SideMenu({
@@ -19,6 +20,7 @@ export function SideMenu({
   sykmeldtId,
   activePage,
   routes,
+  stilling,
 }: SideMenuProps): ReactElement {
   return (
     <nav aria-labelledby="side-menu-header" className={styles.navRoot}>
@@ -30,6 +32,11 @@ export function SideMenu({
       >
         {formatFirstNamePossessive(sykmeldtName, "sideoversikt")}
       </Heading>
+      {stilling && (
+        <BodyShort size="small" className={styles.stilling}>
+          {stilling.tittel} {stilling.prosent} %
+        </BodyShort>
+      )}
       <ul className={styles.buttonList}>
         <MenuItem
           sykmeldtId={sykmeldtId}

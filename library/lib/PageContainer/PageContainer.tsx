@@ -2,6 +2,7 @@ import cn from "clsx";
 import type { PropsWithChildren, ReactElement, ReactNode } from "react";
 
 import { ExpandableMobileMenu } from "../SideMenu/ExpandableMobileMenu/ExpandableMobileMenu";
+import type { Stilling } from "../types";
 import styles from "./PageContainer.module.css";
 import PageHeader, { type HeaderTitle } from "./PageHeader/PageHeader";
 
@@ -18,6 +19,7 @@ type SykmeldtNavigation =
       sykmeldt: {
         navn: string;
         fnr: string;
+        stilling?: Stilling;
       } | null;
       navigation: ReactNode;
     }
@@ -44,6 +46,7 @@ export const PageContainer = ({
         <ExpandableMobileMenu
           headerTitle={header ? header.title : sykmeldt.navn}
           sykmeldtFnr={sykmeldt.fnr}
+          stilling={sykmeldt.stilling}
           className={styles.mobileMenuAccordion}
         >
           {navigation}

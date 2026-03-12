@@ -1,5 +1,10 @@
 import type { PropsWithChildren, ReactElement } from "react";
 
+export interface Stilling {
+  tittel: string;
+  prosent: number;
+}
+
 export enum RootPages {
   Sykmeldinger = "Sykmeldinger",
   Soknader = "Søknader",

@@ -3,6 +3,7 @@ import { Accordion, BodyShort, Heading } from "@navikt/ds-react";
 import cn from "clsx";
 import type { PropsWithChildren, ReactElement } from "react";
 
+import type { Stilling } from "../../types";
 import { addSpaceAfterEverySixthCharacter } from "../../utils/stringUtils";
 
 import styles from "./ExpandableMobileMenu.module.css";
@@ -10,12 +11,14 @@ import styles from "./ExpandableMobileMenu.module.css";
 interface Props {
   headerTitle: string;
   sykmeldtFnr: string;
+  stilling?: Stilling;
   className?: string;
 }
 
 export const ExpandableMobileMenu = ({
   headerTitle,
   sykmeldtFnr,
+  stilling,
   children,
   className,
 }: PropsWithChildren<Props>): ReactElement => {
@@ -32,6 +35,11 @@ export const ExpandableMobileMenu = ({
               <BodyShort>
                 {addSpaceAfterEverySixthCharacter(sykmeldtFnr)}
               </BodyShort>
+              {stilling && (
+                <BodyShort size="small">
+                  {stilling.tittel} {stilling.prosent} %
+                </BodyShort>
+              )}
             </div>
           </div>
         </Accordion.Header>

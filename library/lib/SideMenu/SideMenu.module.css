@@ -8,6 +8,11 @@
   padding-bottom: var(--ax-space-16);
 }
 
+.navRoot .stilling {
+  margin-bottom: var(--ax-space-12);
+  color: var(--ax-text-subtle);
+}
+
 .navRoot .buttonList {
   display: flex;
   flex-direction: column;

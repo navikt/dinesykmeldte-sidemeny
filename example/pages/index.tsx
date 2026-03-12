@@ -40,6 +40,7 @@ const Home: NextPage = () => {
       sykmeldt={{
         navn: "Test N. Testson",
         fnr: "123456789",
+        stilling: { tittel: "Lærer", prosent: 50 },
       }}
       navigation={sideMenu && <MyAppsSideMenu value={value} />}
     >
