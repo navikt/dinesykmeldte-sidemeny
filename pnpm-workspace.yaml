@@ -1,3 +1,7 @@
 packages:
   - library
   - example
+allowBuilds:
+  esbuild: true
+  lefthook: false
+  sharp: false
