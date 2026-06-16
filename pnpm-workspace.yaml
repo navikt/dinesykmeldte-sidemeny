@@ -1,3 +1,10 @@
 packages:
   - library
   - example
+allowBuilds:
+  esbuild: true
+  lefthook: false
+  sharp: false
+
+minimumReleaseAge: 4320
+blockExoticSubdeps: true
