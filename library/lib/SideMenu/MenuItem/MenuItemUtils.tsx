@@ -56,7 +56,7 @@ export function pageToUrl(page: RootPages, sykmeldtId: string): string {
     case RootPages.Dialogmoter:
       return `/syk/dialogmoter/arbeidsgiver/${sykmeldtId}`;
     case RootPages.Oppfolgingsplaner:
-      return `/syk/oppfolgingsplaner/arbeidsgiver/${sykmeldtId}`;
+      return `/syk/oppfolgingsplan/${sykmeldtId}`;
   }
 }
 
