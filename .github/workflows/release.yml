@@ -27,7 +27,7 @@ jobs:
         run: pnpm build
 
       - name: Create version PR or publish
-        uses: changesets/action@a45c4d594aa4e2c509dc14a9f2b3b67ba3780d0d
+        uses: changesets/action@22ccf9aa43179fe9e27dc62e575971d28cce197c
         with:
           version: pnpm changeset version
           publish: pnpm changeset publish
