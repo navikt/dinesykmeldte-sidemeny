@@ -22,24 +22,24 @@ Instruksjonen supplerer repo-spesifikke regler, men overstyrer dem ikke.
    - Sjekk at secrets ikke ligger i kode, config, testdata eller logger.
    - Sjekk at personopplysninger (PII) ikke logges eller eksponeres unødvendig.
    - Flagg alltid røde signaler som auth-endringer, `accessPolicy`, auditlogg, nye eksterne integrasjoner eller GitHub Actions-sikkerhet.
-   - Ved tvil: foreslå manuell sikkerhetsgjennomgang via `/security-review`.
+    - Ved tvil: foreslå manuell sikkerhetsgjennomgang.
 
 3. **Tilgjengelighet (frontend-PR-er)**
    - Sjekk tastaturnavigasjon, semantikk, fokusrekkefølge og meningsfulle labels.
    - Sjekk at feilmeldinger og validering er forståelige med skjermleser.
    - Sjekk kontrast og at interaktive elementer kan brukes uten mus.
-   - Ved behov: foreslå gjennomgang via `/accessibility-review`.
+    - Ved behov: foreslå manuell tilgjengelighetsgjennomgang.
 
 4. **Klarspråk (brukerrettet tekst)**
    - Sjekk at labels, hjelpetekst, feilmeldinger og bekreftelser er tydelige og konkrete.
    - Unngå internsjargong i brukerflate-tekst.
    - Påpek uklare eller tvetydige formuleringer.
-   - Ved behov: foreslå forbedring via `/klarsprak`.
+    - Ved behov: foreslå språklig forbedring.
 
 ## Avgrensning
 
 - Denne filen beskriver kun kjernesjekker for Copilot Code Review.
-- Dype arkitektur- og domenereviews håndteres av egne agenter og skills.
+- Dype arkitektur- og domenereviews ligger utenfor scope for automatisk PR-review.
 - Reviewkommentarer skal være handlingsrettede, med tydelig risiko og anbefalt endring.
 
 ## Prioritering i kommentarer

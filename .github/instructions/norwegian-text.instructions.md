@@ -1,11 +1,11 @@
 ---
-description: "Definerer korte, obligatoriske klarspråk-regler for norsk markdown-tekst i Nav-repoer og peker til /klarsprak for dypdykk"
+description: "Definerer korte, obligatoriske klarspråk-regler for norsk markdown-tekst i Nav-repoer"
 applyTo: "**/*.md"
 ---
 
 # Norsk tekstkvalitet (lean)
 
-Disse reglene gjelder all norsk markdown-tekst i Nav-repoer. For dypere veiledning på mikrotekst, feilmeldinger, labels og PR-tekst — bruk `/klarsprak`.
+Disse reglene gjelder all norsk markdown-tekst i Nav-repoer.
 
 ## AI-markører å unngå
 
@@ -46,7 +46,7 @@ I sammensatte ord med engelsk fagterm: bruk bindestrek (`CI-pipeline`, `API-kall
 
 ## Tredjeperson i description-felt
 
-Når du skriver `description` i `SKILL.md` eller instruction-frontmatter, bruk tredjeperson.
+Når du skriver `description` i instruction-frontmatter, bruk tredjeperson.
 Skriv hva filen gjør, ikke hva "jeg" eller "du" gjør.
 
 ```text
