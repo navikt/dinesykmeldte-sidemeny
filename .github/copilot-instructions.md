@@ -1,51 +1,17 @@
 # dinesykmeldte-sidemeny
 
-Published React sidebar library with a separate Next.js example application. Owned by Team eSyfo (`navikt`).
-
-## Source map
-
-`library/` owns `@navikt/dinesykmeldte-sidemeny`; Vite builds the library. `example/` is a Next.js consumer. Preserve package exports and peer-dependency compatibility. Changesets in `.changeset/` drive package releases.
-
-## Commands
-
-Use the pnpm version in `package.json` and the committed lockfile.
-The scripts in `package.json` and existing CI define the build/test contract.
-
 ```sh
-pnpm run dev
-pnpm run test
-pnpm run lint
-pnpm run build
+pnpm build
+pnpm dev
+pnpm test
+pnpm lint
+pnpm --filter dinesykmeldte-sidemeny-example build
 ```
 
-## Frontend conventions
-
-- TypeScript and Aksel are the existing UI foundation; inspect package versions
-  and nearby components before selecting APIs or patterns.
-- Prefer Aksel components and semantic spacing/color tokens. Preserve responsive
-  behavior, keyboard navigation, visible focus and accessible form errors.
-- English code and comments; Norwegian user-facing text and established domain
-  terms. Format numbers and dates with an explicit Norwegian locale.
-- Cover changed application behavior, including loading, errors and empty
-  states. Do not duplicate upstream Aksel component tests.
-- Keep changes within the requested scope. New dependencies, custom layout
-  conventions, and changes to authentication or data-fetching strategy need a
-  resolved decision within the task.
-
-## Runtime and data
-
-The library is published through `.github/workflows/release.yml`; the example is published to GitHub Pages. This repo has no Nais workload or backend token-exchange implementation.
-Never expose tokens, personal data or response payloads in logs, fixtures,
-screenshots or committed documentation.
-
-## Repository guidance
-
-This repository owns its instructions, local specialists and issue/PR templates.
-Update these files with verified repository facts when an authorized change
-makes them stale. Shared agent roles and skills come from the selected
-Grillmester plugin through nav-pilot; do not copy them into `.github/` or add a
-file-sync workflow. Use the active client's catalog for exact callable IDs.
-
-Keep temporary plans and scratch output out of version control. Put durable
-repository documentation in the existing README or an appropriate `docs/`
-page; preserve the established layout and keep current task state separate.
+- Root `build` and `test` cover the published library only. The example has a
+  separate build; root `dev` runs its server and the library watcher together.
+- Consumers supply Aksel CSS and the router-specific link implementation.
+  Preserve the public component/type exports and separate CSS export in
+  `library/package.json`; do not add a Next.js dependency to the library.
+- Package changes use `pnpm changeset`; release runs through the existing
+  Changesets workflow. The example's Pages deployment is separate.
