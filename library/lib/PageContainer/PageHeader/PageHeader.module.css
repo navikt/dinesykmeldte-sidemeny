@@ -36,8 +36,18 @@
 }
 
 /*
- * Not Aksel's <Hide below="lg">: its rule also applies when printing, and the
- * header must be printed even on narrow paper. 1024px is Aksel's lg breakpoint.
+ * Aksel's Hide applies when printing too. Keep this screen-only so headerRight
+ * remains available on narrow paper. 768px is Aksel's md breakpoint.
+ */
+@media screen and (width < 768px) {
+  .headerExtra {
+    display: none;
+  }
+}
+
+/*
+ * The header must remain visible when printing, including on narrow paper.
+ * 1024px is Aksel's lg breakpoint.
  */
 @media screen and (width < 1024px) {
   .headerRoot.hideHeaderOnMobile {

@@ -39,7 +39,7 @@ export const PageContainer = ({
     <PageHeader
       header={header}
       headerRight={headerRight}
-      hideHeaderOnMobile={!!navigation}
+      hideHeaderOnMobile={Boolean(navigation && sykmeldt)}
     >
       {navigation && sykmeldt ? (
         <Show below="lg" asChild>

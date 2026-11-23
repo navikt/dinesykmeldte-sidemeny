@@ -1,5 +1,5 @@
 import type { BandageIcon } from "@navikt/aksel-icons";
-import { BodyShort, Heading, Hide, Skeleton } from "@navikt/ds-react";
+import { BodyShort, Heading, Skeleton } from "@navikt/ds-react";
 import cn from "clsx";
 import type { PropsWithChildren, ReactElement, ReactNode } from "react";
 
@@ -54,9 +54,7 @@ function PageHeader({
               </div>
             </div>
             {headerRight && (
-              <Hide below="md" className={styles.headerExtra}>
-                {headerRight}
-              </Hide>
+              <div className={styles.headerExtra}>{headerRight}</div>
             )}
           </section>
         </div>
