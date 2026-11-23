@@ -14,7 +14,11 @@ Biblioteket består hovedsaklig av to komponenter. `<PageContainer />` og `<Side
 
 ### `<PageContainer />`
 
-Denne brukes til å få lik layout på alle sidene som bruker sidemenyen. Den har også ansvar for å håndtere breakpoints ved forskjellige skjermbredder.
+Denne brukes til å få lik layout på alle sidene som bruker sidemenyen. Layouten bygger på Aksels `Page.Block`, `HStack`, `Show` og `Hide`, og følger Aksels breakpoints:
+
+- Under `lg` (1024px) vises sidemenyen som en sammenleggbar meny over innholdet, og sideheaderen skjules når det finnes en meny.
+- Under `md` (768px) skjules `headerRight` på skjerm.
+- Ved utskrift skjules menyene, mens sideheaderen og innholdet skrives ut i full bredde.
 
 Den gir deg et område å plassere sidemenyen i, samt et område for å putte innholdet ditt. Denne brukes sammen med `SideMenu` som `navigation`-prop.
 

@@ -1,3 +1,4 @@
+import { Box, Hide, HStack, Page, Show } from "@navikt/ds-react";
 import cn from "clsx";
 import type { PropsWithChildren, ReactElement, ReactNode } from "react";
 
@@ -38,29 +39,45 @@ export const PageContainer = ({
     <PageHeader
       header={header}
       headerRight={headerRight}
-      hideHeaderOnMobile={!!navigation}
+      hideHeaderOnMobile={Boolean(navigation && sykmeldt)}
     >
       {navigation && sykmeldt ? (
-        <ExpandableMobileMenu
-          headerTitle={header ? header.title : sykmeldt.navn}
-          sykmeldtFnr={sykmeldt.fnr}
-          className={styles.mobileMenuAccordion}
-        >
-          {navigation}
-        </ExpandableMobileMenu>
+        <Show below="lg" asChild>
+          <ExpandableMobileMenu
+            headerTitle={header ? header.title : sykmeldt.navn}
+            sykmeldtFnr={sykmeldt.fnr}
+            className={styles.mobileMenu}
+          >
+            {navigation}
+          </ExpandableMobileMenu>
+        </Show>
       ) : null}
 
-      <div className={cn(styles.rootContainer, className)}>
-        <div className={styles.content}>
+      <Page.Block width="2xl" gutters className={cn(styles.root, className)}>
+        <HStack justify="center" wrap={false}>
           {navigation ? (
-            <div className={styles.desktopMenuContainer}>{navigation}</div>
+            <Hide below="lg" className={styles.desktopMenu}>
+              {navigation}
+            </Hide>
           ) : (
-            <div className={styles.sideMenuFiller} />
+            <SideMenuFiller />
           )}
           <section className={styles.pageContainer}>{children}</section>
-          <div className={styles.sideMenuFiller} />
-        </div>
-      </div>
+          <SideMenuFiller />
+        </HStack>
+      </Page.Block>
     </PageHeader>
   );
 };
+
+const SideMenuFiller = (): ReactElement => (
+  <Hide below="lg" asChild>
+    <Box
+      flexBasis={{ xs: "5%", xl: "25%" }}
+      flexGrow={{ xs: "0", xl: "1" }}
+      flexShrink="0"
+      maxWidth="15rem"
+      className={styles.sideMenuFiller}
+    />
+  </Hide>
+);
