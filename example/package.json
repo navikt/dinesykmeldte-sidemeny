@@ -23,7 +23,7 @@
     "@types/node": "22.13.1",
     "@types/react": "19.0.8",
     "@types/react-dom": "19.0.3",
-    "csp-header": "^6.3.0",
+    "csp-header": "^6.4.0",
     "html-react-parser": "^5.2.17",
     "typescript": "5.9.3"
   }
