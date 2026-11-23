@@ -35,13 +35,11 @@
   max-width: 256px;
 }
 
-@media only screen and (max-width: 720px) {
-  .headerExtra {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 960px) {
+/*
+ * Not Aksel's <Hide below="lg">: its rule also applies when printing, and the
+ * header must be printed even on narrow paper. 1024px is Aksel's lg breakpoint.
+ */
+@media screen and (width < 1024px) {
   .headerRoot.hideHeaderOnMobile {
     display: none;
   }
