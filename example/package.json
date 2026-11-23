@@ -25,6 +25,6 @@
     "@types/react-dom": "19.0.3",
     "csp-header": "^6.4.0",
     "html-react-parser": "^6.1.9",
-    "typescript": "5.9.3"
+    "typescript": "7.0.2"
   }
 }
