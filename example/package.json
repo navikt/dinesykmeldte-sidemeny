@@ -9,10 +9,10 @@
     "lint": "pnpm exec biome check ."
   },
   "dependencies": {
-    "@navikt/aksel-icons": "^8.5.0",
+    "@navikt/aksel-icons": "^8.23.0",
     "@navikt/dinesykmeldte-sidemeny": "workspace:*",
-    "@navikt/ds-css": "^8.5.0",
-    "@navikt/ds-react": "^8.5.0",
+    "@navikt/ds-css": "^8.23.0",
+    "@navikt/ds-react": "^8.23.0",
     "@navikt/nav-dekoratoren-moduler": "^3.7.3",
     "clsx": "2.1.1",
     "next": "16.4.6",
