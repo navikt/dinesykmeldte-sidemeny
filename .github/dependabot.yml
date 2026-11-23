@@ -4,6 +4,7 @@ registries:
   npm-github:
     type: npm-registry
     url: https://npm.pkg.github.com
+    scope: '@navikt'
     token: ${{ secrets.READER_TOKEN }}
 
 updates:
@@ -14,6 +15,10 @@ updates:
       interval: daily
     cooldown:
       default-days: 7
+    ignore:
+      # Upgrade the action together with the Changesets CLI.
+      - dependency-name: 'changesets/action'
+        update-types: ['version-update:semver-major']
     groups:
       actions:
         patterns:
@@ -34,6 +39,9 @@ updates:
     ignore:
       - dependency-name: 'eslint'
         versions: ['9.x']
+      # Upgrade the CLI together with changesets/action.
+      - dependency-name: '@changesets/cli'
+        update-types: ['version-update:semver-major']
     groups:
       aksel-dependencies:
         patterns:
