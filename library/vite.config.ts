@@ -7,13 +7,14 @@ import dts from "vite-plugin-dts";
 
 export default defineConfig({
   build: {
+    target: ["chrome107", "edge107", "firefox104", "safari16"],
     lib: {
       formats: ["es"],
-      entry: path.resolve(__dirname, "lib/main.ts"),
+      entry: path.resolve(import.meta.dirname, "lib/main.ts"),
       name: "DineSykmeldteSidemeny",
       fileName: `dinesykmeldte-sidemeny`,
     },
-    rollupOptions: {
+    rolldownOptions: {
       external: [
         "react",
         "react/jsx-runtime",
